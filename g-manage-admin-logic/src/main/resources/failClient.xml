@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<failure_list>
+	<client>
+		<client_cd>T00021001</client_cd>
+	</client>
+	<client>
+		<client_cd>T00021002</client_cd>
+	</client>
+	<client>
+		<client_cd>T00021003</client_cd>
+	</client>
+	<client>
+		<client_cd>T00021004</client_cd>
+	</client>
+</failure_list>

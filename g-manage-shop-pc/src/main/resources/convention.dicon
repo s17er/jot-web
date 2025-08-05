@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+	"http://www.seasar.org/dtd/components24.dtd">
+<components>
+	<component class="org.seasar.framework.convention.impl.NamingConventionImpl">
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.common"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.db.common"</arg>
+		</initMethod>
+
+		<!-- service -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.logic"</arg>
+		</initMethod>
+
+		<!-- Action -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.sys"</arg>
+		</initMethod>
+				<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.util"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.login"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.top"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.application"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.webdata"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.scoutFoot"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.pattern"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.shop"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.preview"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.passwordReissue"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.shopList"</arg>
+		</initMethod>
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.customerImage"</arg>
+		</initMethod>
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.preApplication"</arg>
+		</initMethod>
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.common"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.db.common"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.ajax"</arg>
+		</initMethod>
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.price"</arg>
+		</initMethod>
+
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.shop.pc.contact"</arg>
+		</initMethod>
+
+		<!-- Arbeit System -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.arbeitsys"</arg>
+		</initMethod>
+
+	</component>
+	<component class="org.seasar.framework.convention.impl.PersistenceConventionImpl"/>
+</components>

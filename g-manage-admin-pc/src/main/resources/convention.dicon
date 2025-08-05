@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+	"http://www.seasar.org/dtd/components24.dtd">
+<components>
+	<component class="org.seasar.framework.convention.impl.NamingConventionImpl">
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.sys"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.common"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.db.common"</arg>
+		</initMethod>
+
+		<!-- service -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.service"</arg>
+		</initMethod>
+
+		<!-- Action -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.ajax"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.application"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.magazineImport"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.changePassword"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.customer"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.customerImage"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.gcw"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.information"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.login"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.mailMag"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.maintenance"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.member"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.juskill"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.preview"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.report"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.subWindow"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.top"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.webdata"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.shopList"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.advancedRegistration"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.ipPhone"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.shopMmt"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.interest"</arg>
+		</initMethod>
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.admin.pc.preApplication"</arg>
+		</initMethod>
+
+		<!-- Old System -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.oldsys"</arg>
+		</initMethod>
+
+		<!-- Arbeit System -->
+		<initMethod name="addRootPackageName">
+			<arg>"com.gourmetcaree.arbeitsys"</arg>
+		</initMethod>
+
+	</component>
+	<component class="org.seasar.framework.convention.impl.PersistenceConventionImpl"/>
+</components>

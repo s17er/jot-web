@@ -1,0 +1,1454 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- DTD -->
+<!DOCTYPE role[
+	<!ELEMENT role (version?, description, authLevels) >
+	<!ELEMENT version (#PCDATA) >			<!-- バージョン:プログラムでは未使用 -->
+	<!ELEMENT description (#PCDATA) >		<!-- 概要:プログラムでは未使用 -->
+
+	<!ELEMENT authLevels (authLevel*) >
+	<!ELEMENT authLevel (authLevelCode, authLevelName, accessCodes) >
+	<!ELEMENT authLevelCode (#PCDATA) >
+	<!ELEMENT authLevelName (#PCDATA) >
+
+	<!ELEMENT accessCodes (accessCode*) >
+	<!ELEMENT accessCode (#PCDATA) >
+]>
+
+<role>
+	<version>1.0</version>
+	<description>アクセス制限用設定ファイルです。</description>
+
+	<authLevels>
+<!--
+	＜定数名のルール＞
+	【サブパッケージ名】_【クラス名】_【メソッド名】
+
+	＜コメントのルール＞
+	【説明】_【メソッド説明】
+
+ -->
+		<!-- ###################  管理者の権限設定  ################### -->
+		<authLevel>
+			<authLevelCode>1</authLevelCode>
+			<authLevelName>管理者</authLevelName>
+
+			<accessCodes>
+
+				<!-- TOPページ -->
+				<accessCode>TOP_MENU_INDEX</accessCode>				<!-- TOPページ_初期表示 -->
+
+				<!-- WEBデータ管理 -->
+				<accessCode>WEBDATA_INPUT_INDEX</accessCode>			<!-- WEBデータ登録_初期表示 -->
+				<accessCode>WEBDATA_INPUT_ADDASSIGNED</accessCode>		<!-- WEBデータ登録_路線追加 -->
+				<accessCode>WEBDATA_INPUT_DELETEASSIGNED</accessCode>	<!-- WEBデータ登録_路線削除 -->
+				<accessCode>WEBDATA_INPUT_UPMATERIAL</accessCode>		<!-- WEBデータ登録_素材アップロード -->
+				<accessCode>WEBDATA_INPUT_DELETEMATERIAL</accessCode>	<!-- WEBデータ登録_素材削除 -->
+				<accessCode>WEBDATA_INPUT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ登録_素材表示 -->
+				<accessCode>WEBDATA_INPUT_RESETSENTENCE4</accessCode>	<!-- WEBデータ登録_文章4クリア -->
+				<accessCode>WEBDATA_INPUT_CONF</accessCode>				<!-- WEBデータ登録_確認 -->
+				<accessCode>WEBDATA_INPUT_CORRECT</accessCode>			<!-- WEBデータ登録_訂正 -->
+				<accessCode>WEBDATA_INPUT_SUBMIT</accessCode>			<!-- WEBデータ登録_登録 -->
+				<accessCode>WEBDATA_INPUT_COMP</accessCode>				<!-- WEBデータ登録_完了 -->
+				<accessCode>WEBDATA_INPUT_COPY</accessCode>				<!-- WEBデータ登録_コピー -->
+				<accessCode>WEBDATA_INPUT_COPYCOMP</accessCode>			<!-- WEBデータ登録_コピー完了 -->
+				<accessCode>WEBDATA_INPUT_BACKLIST</accessCode>			<!-- WEBデータ登録_一覧へ戻る -->
+				<accessCode>WEBDATA_LIST_INDEX</accessCode>				<!-- WEBデータ一覧_初期表示 -->
+				<accessCode>WEBDATA_LIST_SEARCH</accessCode>			<!-- WEBデータ一覧_検索 -->
+				<accessCode>WEBDATA_LIST_CHANGEPAGE</accessCode>		<!-- WEBデータ一覧_ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGECOUNTPAGE</accessCode>	<!-- WEBデータ一覧_件数ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGEMAXROW</accessCode>		<!-- WEBデータ一覧_最大表示件数変更 -->
+				<accessCode>WEBDATA_LIST_SEARCHAGAIN</accessCode>		<!-- WEBデータ一覧_別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_BACKSEARCH</accessCode>		<!-- WEBデータ一覧_一括処理別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_LUMPCOPY</accessCode>			<!-- WEBデータ一覧_一括コピー -->
+				<accessCode>WEBDATA_LIST_LUMPDECIDE</accessCode>		<!-- WEBデータ一覧_一括確定 -->
+				<accessCode>WEBDATA_LIST_LUMPDELETE</accessCode>		<!-- WEBデータ一覧 一括削除 -->
+				<accessCode>WEBDATA_DETAIL_INDEX</accessCode>			<!-- WEBデータ詳細_初期表示 -->
+				<accessCode>WEBDATA_DETAIL_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ詳細_素材表示 -->
+				<accessCode>WEBDATA_DETAIL_BACK</accessCode>			<!-- WEBデータ詳細_戻る -->
+				<accessCode>WEBDATA_EDIT_INDEX</accessCode>				<!-- WEBデータ編集_初期表示 -->
+				<accessCode>WEBDATA_EDIT_ADDASSIGNED</accessCode>		<!-- WEBデータ編集_路線追加 -->
+				<accessCode>WEBDATA_EDIT_DELETEASSIGNED</accessCode>	<!-- WEBデータ編集_路線削除 -->
+				<accessCode>WEBDATA_EDIT_UPMATERIAL</accessCode>		<!-- WEBデータ編集_素材アップロード -->
+				<accessCode>WEBDATA_EDIT_DELETEMATERIAL</accessCode>	<!-- WEBデータ編集_素材削除 -->
+				<accessCode>WEBDATA_EDIT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ編集_素材表示 -->
+				<accessCode>WEBDATA_EDIT_RESETSENTENCE4</accessCode>	<!-- WEBデータ編集_文章4クリア -->
+				<accessCode>WEBDATA_EDIT_CHANGESTATUS</accessCode>		<!-- WEBデータ編集_ステータス変更 -->
+				<accessCode>WEBDATA_EDIT_STATUSCOMP</accessCode>		<!-- WEBデータ編集_ステータス変更完了 -->
+				<accessCode>WEBDATA_EDIT_BACK</accessCode>				<!-- WEBデータ編集_戻る -->
+				<accessCode>WEBDATA_EDIT_CONF</accessCode>				<!-- WEBデータ編集_確認 -->
+				<accessCode>WEBDATA_EDIT_CORRECT</accessCode>			<!-- WEBデータ編集_訂正 -->
+				<accessCode>WEBDATA_EDIT_SUBMIT</accessCode>			<!-- WEBデータ編集_登録 -->
+				<accessCode>WEBDATA_EDIT_COMP</accessCode>				<!-- WEBデータ編集_完了 -->
+				<accessCode>WEBDATA_EDIT_BACKLIST</accessCode>			<!-- WEBデータ編集_一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_RESET_BACKLIST</accessCode>	<!-- WEBデータ編集_上下ボタンから一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_BACKTOP</accessCode>			<!-- WEBデータ編集_上下ボタンからTOPへ戻る -->
+				<accessCode>WEBDATA_EDIT_INDEXWEBDETAIL</accessCode>	<!-- WEBデータ編集_確認画面の店舗一覧へ遷移 -->
+				<accessCode>WEBDATA_DELETE_INDEX</accessCode>			<!-- WEBデータ削除_初期表示 -->
+				<accessCode>WEBDATA_DELETE_COMP</accessCode>			<!-- WEBデータ削除_完了 -->
+				<accessCode>WEBDATA_DELETE_BACKLIST</accessCode>		<!-- WEBデータ削除_一覧へ戻る -->
+				<accessCode>APPTEST_INPUT_INDEX</accessCode>			<!-- 応募テスト_初期表示 -->
+				<accessCode>APPTEST_INPUT_BACK</accessCode>				<!-- 応募テスト_戻る -->
+				<accessCode>APPTEST_INPUT_CONF</accessCode>				<!-- 応募テスト_確認 -->
+				<accessCode>APPTEST_INPUT_CORRECT</accessCode>			<!-- 応募テスト_訂正 -->
+				<accessCode>APPTEST_INPUT_SUBMIT</accessCode>			<!-- 応募テスト_登録 -->
+				<accessCode>APPTEST_INPUT_COMP</accessCode>				<!-- 応募テスト_完了 -->
+				<accessCode>APPTEST_INPUT_BACKLIST</accessCode>			<!-- 応募テスト_一覧へ戻る -->
+				<accessCode>LUMPCOPY_INPUT_INDEX</accessCode>			<!-- WEBデータ一括コピー_初期表示 -->
+				<accessCode>LUMPCOPY_INPUT_CONF</accessCode>			<!-- WEBデータ一括コピー_確認 -->
+				<accessCode>LUMPCOPY_INPUT_BACK</accessCode>			<!-- WEBデータ一括コピー_戻る -->
+				<accessCode>LUMPCOPY_INPUT_CORRECT</accessCode>			<!-- WEBデータ一括コピー_訂正 -->
+				<accessCode>LUMPCOPY_INPUT_SUBMIT</accessCode>			<!-- WEBデータ一括コピー_登録 -->
+				<accessCode>LUMPCOPY_INPUT_COMP</accessCode>			<!-- WEBデータ一括コピー_完了 -->
+				<accessCode>LUMPCOPY_INPUT_BACKLIST</accessCode>		<!-- WEBデータ一括コピー_一覧へ戻る -->
+				<accessCode>LUMPDECIDE_EDIT_INDEX</accessCode>			<!-- WEBデータ一括確定_初期表示 -->
+				<accessCode>LUMPDECIDE_EDIT_BACK</accessCode>			<!-- WEBデータ一括確定_戻る -->
+				<accessCode>LUMPDECIDE_EDIT_SUBMIT</accessCode>			<!-- WEBデータ一括確定_登録 -->
+				<accessCode>LUMPDECIDE_EDIT_COMP</accessCode>			<!-- WEBデータ一括確定_完了 -->
+				<accessCode>LUMPDECIDE_EDIT_BACKLIST</accessCode>		<!-- WEBデータ一括確定_一覧へ戻る -->
+				<accessCode>LUMPDELETE_DELETE_INDEX</accessCode>		<!-- WEBデータ一括削除_初期表示 -->
+				<accessCode>LUMPDELETE_DELETE_BACK</accessCode>			<!-- WEBデータ一括削除_戻る -->
+				<accessCode>LUMPDELETE_DELETE_SUBMIT</accessCode>		<!-- WEBデータ一括削除_登録 -->
+				<accessCode>LUMPDELETE_DELETE_COMP</accessCode>			<!-- WEBデータ一括削除_完了 -->
+				<accessCode>LUMPDELETE_DELETE_BACKLIST</accessCode>		<!-- WEBデータ一括削除_一覧へ戻る -->
+
+				<!-- 顧客検索(サブウィンドウ) -->
+				<accessCode>CUSTOMERSEARCH_SELECT_INDEX</accessCode>			<!-- 顧客選択_初期表示 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_SEARCH</accessCode>			<!-- 顧客選択_検索 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEPAGE</accessCode>		<!-- 顧客選択_ページ遷移 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEMAXROW</accessCode>		<!-- 顧客選択_最大表示件数変更 -->
+
+				<!-- 顧客管理 -->
+				<accessCode>CUSTOMER_INPUT_INDEX</accessCode>			<!-- 顧客登録_初期表示 -->
+				<accessCode>CUSTOMER_INPUT_ADDASSIGNED</accessCode>		<!-- 顧客登録_担当追加 -->
+				<accessCode>CUSTOMER_INPUT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_INPUT_CONF</accessCode>			<!-- 顧客登録_確認 -->
+				<accessCode>CUSTOMER_INPUT_CORRECT</accessCode>			<!-- 顧客登録_訂正 -->
+				<accessCode>CUSTOMER_INPUT_SUBMIT</accessCode>			<!-- 顧客登録_登録 -->
+				<accessCode>CUSTOMER_INPUT_COMP</accessCode>			<!-- 顧客登録_完了 -->
+				<accessCode>CUSTOMER_LIST_INDEX</accessCode>			<!-- 顧客一覧_初期表示 -->
+				<accessCode>CUSTOMER_LIST_SEARCH</accessCode>			<!-- 顧客一覧_検索 -->
+				<accessCode>CUSTOMER_LIST_CHANGEPAGE</accessCode>		<!-- 顧客一覧_ページ遷移 -->
+				<accessCode>CUSTOMER_LIST_CHANGEMAXROW</accessCode>		<!-- 顧客一覧_最大表示件数変更 -->
+				<accessCode>CUSTOMER_LIST_SEARCHAGAIN</accessCode>		<!-- 顧客一覧_別画面から一覧を表示 -->
+				<accessCode>CUSTOMER_LIST_BACKMAILMAG</accessCode>		<!-- 顧客一覧_メルマガ確認画面から一覧を表示 -->
+				<accessCode>CUSTOMER_LIST_MAILMAGAZINE</accessCode>		<!-- 顧客一覧_メルマガ送信 -->
+				<accessCode>CUSTOMER_DETAIL_INDEX</accessCode>			<!-- 顧客詳細_初期表示 -->
+				<accessCode>CUSTOMER_DETAIL_BACK</accessCode>			<!-- 顧客詳細_戻る -->
+				<accessCode>CUSTOMER_EDIT_INDEX</accessCode>			<!-- 顧客編集_初期表示 -->
+				<accessCode>CUSTOMER_EDIT_ADDASSIGNED</accessCode>		<!-- 顧客登録_担当追加 -->
+				<accessCode>CUSTOMER_EDIT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_EDIT_BACK</accessCode>				<!-- 顧客編集_戻る -->
+				<accessCode>CUSTOMER_EDIT_CONF</accessCode>				<!-- 顧客編集_確認 -->
+				<accessCode>CUSTOMER_EDIT_CORRECT</accessCode>			<!-- 顧客編集_訂正 -->
+				<accessCode>CUSTOMER_EDIT_SUBMIT</accessCode>			<!-- 顧客編集_登録 -->
+				<accessCode>CUSTOMER_EDIT_COMP</accessCode>				<!-- 顧客編集_完了 -->
+				<accessCode>CUSTOMER_EDIT_BACKLIST</accessCode>			<!-- 顧客編集_一覧へ戻る -->
+				<accessCode>CUSTOMER_DELETE_INDEX</accessCode>			<!-- 顧客削除_初期表示 -->
+				<accessCode>CUSTOMER_DELETE_COMP</accessCode>			<!-- 顧客削除_完了 -->
+				<accessCode>CUSTOMER_DELETE_BACKLIST</accessCode>		<!-- 顧客削除_一覧へ戻る -->
+				<accessCode>CUSTOMERMAILMAG_LIST_INDEX</accessCode>		<!-- 顧客向けメルマガ配信先一覧確認_初期表示 -->
+				<accessCode>CUSTOMERMAILMAG_LIST_CONF</accessCode>		<!-- 顧客向けメルマガ配信先一覧確認_確認 -->
+				<accessCode>CUSTOMERMAILMAG_LIST_BACK</accessCode>		<!-- 顧客向けメルマガ配信先一覧確認_戻る -->
+				<accessCode>CUSTOMERMAILMAG_LIST_BACKMAILMAG</accessCode><!-- 顧客向けメルマガ配信先一覧確認_メルマガ入力からの戻る -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_INDEX</accessCode>	<!-- 顧客向けメルマガ登録_初期表示 -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_CONF</accessCode>		<!-- 顧客向けメルマガ登録_確認 -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_BACK</accessCode>		<!-- 顧客向けメルマガ登録_戻る -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_CORRECT</accessCode>	<!-- 顧客向けメルマガ登録_訂正 -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_SUBMIT</accessCode>	<!-- 顧客向けメルマガ登録_登録 -->
+				<accessCode>CUSTOMERMAILMAG_INPUT_COMP</accessCode>		<!-- 顧客向けメルマガ登録_完了 -->
+
+				<!-- GCWコード管理 -->
+				<accessCode>GCW_INPUT_INDEX</accessCode>			<!-- GCWコード登録_初期表示 -->
+				<accessCode>GCW_INPUT_CONF</accessCode>				<!-- GCWコード登録_確認 -->
+				<accessCode>GCW_INPUT_CORRECT</accessCode>			<!-- GCWコード登録_訂正 -->
+				<accessCode>GCW_INPUT_SUBMIT</accessCode>			<!-- GCWコード登録_登録 -->
+				<accessCode>GCW_INPUT_COMP</accessCode>				<!-- GCWコード登録_完了 -->
+				<accessCode>GCW_LIST_INDEX</accessCode>				<!-- GCWコード一覧_初期表示 -->
+				<accessCode>GCW_LIST_SEARCH</accessCode>			<!-- GCWコード一覧_検索 -->
+				<accessCode>GCW_LIST_CHANGEPAGE</accessCode>		<!-- GCWコード一覧_ページ遷移 -->
+				<accessCode>GCW_LIST_CHANGEMAXROW</accessCode>		<!-- GCWコード一覧_最大表示件数変更 -->
+				<accessCode>GCW_LIST_CHANGESORT</accessCode>		<!-- GCWコード一覧_表示順変更 -->
+				<accessCode>GCW_LIST_SEARCHAGAIN</accessCode>		<!-- GCWコード一覧_別画面から一覧を表示 -->
+				<accessCode>GCW_LIST_CHANGEVALIDFLG</accessCode>	<!-- GCW一覧_有効無効変更 -->
+				<accessCode>GCW_EDIT_INDEX</accessCode>				<!-- GCWコード編集_初期表示 -->
+				<accessCode>GCW_EDIT_BACK</accessCode>				<!-- GCWコード編集_戻る -->
+				<accessCode>GCW_EDIT_CONF</accessCode>				<!-- GCWコード編集_確認 -->
+				<accessCode>GCW_EDIT_CORRECT</accessCode>			<!-- GCWコード編集_訂正 -->
+				<accessCode>GCW_EDIT_SUBMIT</accessCode>			<!-- GCWコード編集_登録 -->
+				<accessCode>GCW_EDIT_COMP</accessCode>				<!-- GCWコード編集_完了 -->
+				<accessCode>GCW_DELETE_INDEX</accessCode>			<!-- GCWコード削除_初期表示 -->
+				<accessCode>GCW_DELETE_BACK</accessCode>			<!-- GCWコード削除_戻る -->
+				<accessCode>GCW_DELETE_SUBMIT</accessCode>			<!-- GCWコード削除_登録 -->
+				<accessCode>GCW_DELETE_COMP</accessCode>			<!-- GCWコード削除_完了 -->
+
+				<!-- 誌面データ移行 -->
+				<accessCode>MAGAZINEIMPORT_IMPORT_INDEX</accessCode>		<!-- 誌面データ移行_初期表示 -->
+				<accessCode>MAGAZINEIMPORT_IMPORT_EXECUTE</accessCode>		<!-- 誌面データ移行_取り込み -->
+				<accessCode>MAGAZINEIMPORT_IMPORT_COMP</accessCode>			<!-- 誌面データ移行_完了 -->
+
+				<!-- レポート管理 -->
+				<accessCode>REPORT_LIST_INDEX</accessCode>				<!-- レポート一覧_初期表示 -->
+				<accessCode>REPORT_LIST_CHANGEMAXROW</accessCode>		<!-- レポート一覧_最大表示件数変更、エリア変更 -->
+				<accessCode>REPORT_LIST_SHOWLIST</accessCode>			<!-- レポート詳細_再表示 -->
+				<accessCode>REPORT_DETAIL_INDEX</accessCode>			<!-- レポート詳細_初期表示 -->
+				<accessCode>REPORT_DETAIL_BACK</accessCode>				<!-- レポート詳細_戻る -->
+
+				<!-- 会員管理 -->
+				<accessCode>MEMBER_LIST_INDEX</accessCode>				<!-- 会員一覧_初期表示 -->
+				<accessCode>MEMBER_LIST_SEARCH</accessCode>				<!-- 会員一覧_検索 -->
+				<accessCode>MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- 会員一覧_ページ遷移 -->
+				<accessCode>MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- 会員一覧_最大表示件数変更 -->
+				<accessCode>MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- 会員一覧_別画面から一覧を表示 -->
+				<accessCode>MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- 会員一覧_メルマガ送信 -->
+				<accessCode>MEMBER_LIST_OUTPUT</accessCode>				<!-- 会員一覧_CSV出力 -->
+				<accessCode>MEMBER_DETAIL_INDEX</accessCode>			<!-- 会員詳細_初期表示 -->
+				<accessCode>MEMBER_DETAIL_BACK</accessCode>				<!-- 会員詳細_戻る -->
+				<accessCode>MEMBER_EDIT_INDEX</accessCode>				<!-- 会員編集_初期表示 -->
+				<accessCode>MEMBER_EDIT_BACK</accessCode>				<!-- 会員編集_戻る -->
+				<accessCode>MEMBER_EDIT_CONF</accessCode>				<!-- 会員編集_確認 -->
+				<accessCode>MEMBER_EDIT_CORRECT</accessCode>			<!-- 会員編集_訂正 -->
+				<accessCode>MEMBER_EDIT_SUBMIT</accessCode>				<!-- 会員編集_登録 -->
+				<accessCode>MEMBER_EDIT_COMP</accessCode>				<!-- 会員編集_完了 -->
+				<accessCode>MEMBER_DELETE_INDEX</accessCode>			<!-- 会員削除_初期表示 -->
+				<accessCode>MEMBER_DELETE_BACK</accessCode>				<!-- 会員削除_戻る -->
+				<accessCode>MEMBER_DELETE_SUBMIT</accessCode>			<!-- 会員削除_登録 -->
+				<accessCode>MEMBER_DELETE_COMP</accessCode>				<!-- 会員削除_完了 -->
+				<accessCode>MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- 会員向けメルマガ登録_初期表示 -->
+				<accessCode>MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- 会員向けメルマガ登録_確認 -->
+				<accessCode>MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- 会員向けメルマガ登録_戻る -->
+				<accessCode>MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- 会員向けメルマガ登録_訂正 -->
+				<accessCode>MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- 会員向けメルマガ登録_登録 -->
+				<accessCode>MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- 会員向けメルマガ登録_完了 -->
+
+				<!-- ジャスキル会員管理 -->
+				<accessCode>JUSKILL_MEMBER_LIST_INDEX</accessCode>				<!-- ジャスキル会員一覧_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCH</accessCode>				<!-- ジャスキル会員一覧_検索 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- ジャスキル会員一覧_ページ遷移 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- ジャスキル会員一覧_最大表示件数変更 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- ジャスキル会員一覧_別画面から一覧を表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- ジャスキル会員一覧_メルマガ送信 -->
+				<accessCode>JUSKILL_MEMBER_LIST_OUTPUT</accessCode>				<!-- ジャスキル会員一覧_CSV出力 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_INDEX</accessCode>			<!-- ジャスキル会員詳細_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_BACK</accessCode>				<!-- ジャスキル会員詳細_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_INDEX</accessCode>				<!-- ジャスキル会員編集_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_BACK</accessCode>				<!-- ジャスキル会員編集_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CONF</accessCode>				<!-- ジャスキル会員編集_確認 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CORRECT</accessCode>			<!-- ジャスキル会員編集_訂正 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_SUBMIT</accessCode>				<!-- ジャスキル会員編集_登録 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_COMP</accessCode>				<!-- ジャスキル会員編集_完了 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- ジャスキル会員向けメルマガ登録_初期表示 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- ジャスキル会員向けメルマガ登録_確認 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- ジャスキル会員向けメルマガ登録_戻る -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- ジャスキル会員向けメルマガ登録_訂正 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- ジャスキル会員向けメルマガ登録_登録 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- ジャスキル会員向けメルマガ登録_完了 -->
+
+				<accessCode>JUSKILL_MEMBER_DELETE_INDEX</accessCode>				<!-- ジャスキル会員削除_実行 -->
+				<accessCode>JUSKILL_MEMBER_DELETE_COMP</accessCode>				<!-- ジャスキル会員削除_完了 -->
+
+				<!-- 仮会員管理 -->
+				<accessCode>TEMPMEMBER_LIST</accessCode>
+				<accessCode>TEMPMEMBER_DETAIL</accessCode>
+				<accessCode>TEMPMEMBER_EDIT</accessCode>
+
+				<!-- 応募管理 -->
+				<accessCode>APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- プレ応募管理 -->
+				<accessCode>PRE_APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>PRE_APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力-->
+				<accessCode>PRE_APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>PRE_APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 気になる管理 -->
+				<accessCode>INTEREST_LIST_INDEX</accessCode>		<!-- 応募一覧_初期表示 -->
+				<accessCode>INTEREST_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>INTEREST_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>INTEREST_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>INTEREST_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>INTEREST_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+
+				<!-- マスタメンテナンス -->
+				<accessCode>MAINTENANCE_INPUT_INDEX</accessCode>	<!-- マスタメンテナンスメニュー_初期表示 -->
+
+				<!-- 号数データ管理 -->
+				<accessCode>VOLUME_INPUT_INDEX</accessCode>			<!-- 号数データ登録_初期表示 -->
+				<accessCode>VOLUME_INPUT_CONF</accessCode>			<!-- 号数データ登録_確認 -->
+				<accessCode>VOLUME_INPUT_CORRECT</accessCode>		<!-- 号数データ登録_訂正 -->
+				<accessCode>VOLUME_INPUT_SUBMIT</accessCode>		<!-- 号数データ登録_登録 -->
+				<accessCode>VOLUME_INPUT_COMP</accessCode>			<!-- 号数データ登録_完了 -->
+				<accessCode>VOLUME_LIST_INDEX</accessCode>			<!-- 号数データ一覧_初期表示 -->
+				<accessCode>VOLUME_LIST_SHOWLIST</accessCode>		<!-- 号数データ一覧_検索切替 -->
+				<accessCode>VOLUME_EDIT_INDEX</accessCode>			<!-- 号数データ編集_初期表示 -->
+				<accessCode>VOLUME_EDIT_BACK</accessCode>			<!-- 号数データ編集_戻る -->
+				<accessCode>VOLUME_EDIT_CONF</accessCode>			<!-- 号数データ編集_確認 -->
+				<accessCode>VOLUME_EDIT_CORRECT</accessCode>		<!-- 号数データ編集_訂正 -->
+				<accessCode>VOLUME_EDIT_SUBMIT</accessCode>			<!-- 号数データ編集_登録 -->
+				<accessCode>VOLUME_EDIT_COMP</accessCode>			<!-- 号数データ編集_完了 -->
+				<accessCode>VOLUME_DELETE_INDEX</accessCode>		<!-- 号数データ削除_初期表示 -->
+				<accessCode>VOLUME_DELETE_BACK</accessCode>			<!-- 号数データ削除_戻る -->
+				<accessCode>VOLUME_DELETE_SUBMIT</accessCode>		<!-- 号数データ削除_登録 -->
+				<accessCode>VOLUME_DELETE_COMP</accessCode>			<!-- 号数データ削除_完了 -->
+
+				<!-- 特集データ管理 -->
+				<accessCode>SPECIAL_INPUT_INDEX</accessCode>		<!-- 特集データ登録_初期表示 -->
+				<accessCode>SPECIAL_INPUT_CONF</accessCode>			<!-- 特集データ登録_確認 -->
+				<accessCode>SPECIAL_INPUT_CORRECT</accessCode>		<!-- 特集データ登録_訂正 -->
+				<accessCode>SPECIAL_INPUT_SUBMIT</accessCode>		<!-- 特集データ登録_登録 -->
+				<accessCode>SPECIAL_INPUT_COMP</accessCode>			<!-- 特集データ登録_完了 -->
+				<accessCode>SPECIAL_LIST_INDEX</accessCode>			<!-- 特集データ一覧_初期表示 -->
+				<accessCode>SPECIAL_EDIT_INDEX</accessCode>			<!-- 特集データ編集_初期表示 -->
+				<accessCode>SPECIAL_EDIT_BACK</accessCode>			<!-- 特集データ編集_戻る -->
+				<accessCode>SPECIAL_EDIT_CONF</accessCode>			<!-- 特集データ編集_確認 -->
+				<accessCode>SPECIAL_EDIT_CORRECT</accessCode>		<!-- 特集データ編集_訂正 -->
+				<accessCode>SPECIAL_EDIT_SUBMIT</accessCode>		<!-- 特集データ編集_登録 -->
+				<accessCode>SPECIAL_EDIT_COMP</accessCode>			<!-- 特集データ編集_完了 -->
+				<accessCode>SPECIAL_DELETE_INDEX</accessCode>		<!-- 特集データ削除_初期表示 -->
+				<accessCode>SPECIAL_DELETE_BACK</accessCode>		<!-- 特集データ削除_戻る -->
+				<accessCode>SPECIAL_DELETE_SUBMIT</accessCode>		<!-- 特集データ削除_登録 -->
+				<accessCode>SPECIAL_DELETE_COMP</accessCode>		<!-- 特集データ削除_完了 -->
+
+				<!-- 事前登録管理 -->
+				<accessCode>ADVANCE_INPUT_INDEX</accessCode>
+				<accessCode>ADVANCE_INPUT_CONF</accessCode>
+				<accessCode>ADVANCE_INPUT_CORRECT</accessCode>
+				<accessCode>ADVANCE_INPUT_SUBMIT</accessCode>
+				<accessCode>ADVANCE_INPUT_COMP</accessCode>
+				<accessCode>ADVANCE_LIST_INDEX</accessCode>
+				<accessCode>ADVANCE_EDIT_INDEX</accessCode>
+				<accessCode>ADVANCE_EDIT_CONF</accessCode>
+				<accessCode>ADVANCE_EDIT_CORRECT</accessCode>
+				<accessCode>ADVANCE_EDIT_SUBMIT</accessCode>
+				<accessCode>ADVANCE_EDIT_COMP</accessCode>
+				<accessCode>ADVANCE_DELETE_INDEX</accessCode>
+				<accessCode>ADVANCE_DELETE_SUBMIT</accessCode>
+				<accessCode>ADVANCE_DELETE_COMP</accessCode>
+				<accessCode>ADVANCE_DELETE_CORRECT</accessCode>
+
+
+				<!-- 営業担当者管理 -->
+				<accessCode>SALES_INPUT_INDEX</accessCode>			<!-- 営業担当者登録_初期表示 -->
+				<accessCode>SALES_INPUT_CONF</accessCode>			<!-- 営業担当者登録_確認 -->
+				<accessCode>SALES_INPUT_CORRECT</accessCode>		<!-- 営業担当者登録_訂正 -->
+				<accessCode>SALES_INPUT_SUBMIT</accessCode>			<!-- 営業担当者登録_登録 -->
+				<accessCode>SALES_INPUT_COMP</accessCode>			<!-- 営業担当者登録_完了 -->
+				<accessCode>SALES_LIST_INDEX</accessCode>			<!-- 営業担当者一覧_初期表示 -->
+				<accessCode>SALES_LIST_SEARCH</accessCode>			<!-- 営業担当者一覧_検索 -->
+				<accessCode>SALES_LIST_CHANGEPAGE</accessCode>		<!-- 営業担当者一覧_ページ遷移 -->
+				<accessCode>SALES_LIST_CHANGEMAXROW</accessCode>	<!-- 営業担当者一覧_最大表示件数変更 -->
+				<accessCode>SALES_LIST_SEARCHAGAIN</accessCode>		<!-- 営業担当者一覧_別画面から一覧を表示 -->
+				<accessCode>SALES_DETAIL_INDEX</accessCode>			<!-- 営業担当者詳細_初期表示 -->
+				<accessCode>SALES_DETAIL_BACK</accessCode>			<!-- 営業担当者詳細_戻る -->
+				<accessCode>SALES_EDIT_INDEX</accessCode>			<!-- 営業担当者編集_初期表示 -->
+				<accessCode>SALES_EDIT_BACK</accessCode>			<!-- 営業担当者編集_戻る -->
+				<accessCode>SALES_EDIT_CONF</accessCode>			<!-- 営業担当者編集_確認 -->
+				<accessCode>SALES_EDIT_CORRECT</accessCode>			<!-- 営業担当者編集_訂正 -->
+				<accessCode>SALES_EDIT_SUBMIT</accessCode>			<!-- 営業担当者編集_登録 -->
+				<accessCode>SALES_EDIT_COMP</accessCode>			<!-- 営業担当者編集_完了 -->
+				<accessCode>SALES_DELETE_INDEX</accessCode>			<!-- 営業担当者削除_初期表示 -->
+				<accessCode>SALES_DELETE_COMP</accessCode>			<!-- 営業担当者削除_完了 -->
+
+				<!-- 会社管理 -->
+				<accessCode>COMPANY_INPUT_INDEX</accessCode>		<!-- 会社登録_初期表示 -->
+				<accessCode>COMPANY_INPUT_CONF</accessCode>			<!-- 会社登録_確認 -->
+				<accessCode>COMPANY_INPUT_CORRECT</accessCode>		<!-- 会社登録_訂正 -->
+				<accessCode>COMPANY_INPUT_SUBMIT</accessCode>		<!-- 会社登録_登録 -->
+				<accessCode>COMPANY_INPUT_COMP</accessCode>			<!-- 会社登録_完了 -->
+				<accessCode>COMPANY_LIST_INDEX</accessCode>			<!-- 会社一覧_初期表示 -->
+				<accessCode>COMPANY_LIST_SEARCH</accessCode>		<!-- 会社一覧_検索 -->
+				<accessCode>COMPANY_DETAIL_INDEX</accessCode>		<!-- 会社詳細_初期表示 -->
+				<accessCode>COMPANY_DETAIL_BACK</accessCode>		<!-- 会社詳細_戻る -->
+				<accessCode>COMPANY_EDIT_INDEX</accessCode>			<!-- 会社編集_初期表示 -->
+				<accessCode>COMPANY_EDIT_BACK</accessCode>			<!-- 会社編集_戻る -->
+				<accessCode>COMPANY_EDIT_CONF</accessCode>			<!-- 会社編集_確認 -->
+				<accessCode>COMPANY_EDIT_CORRECT</accessCode>		<!-- 会社編集_訂正 -->
+				<accessCode>COMPANY_EDIT_SUBMIT</accessCode>		<!-- 会社編集_登録 -->
+				<accessCode>COMPANY_EDIT_COMP</accessCode>			<!-- 会社編集_完了 -->
+				<accessCode>COMPANY_DELETE_INDEX</accessCode>		<!-- 会社削除_初期表示 -->
+				<accessCode>COMPANY_DELETE_COMP</accessCode>		<!-- 会社削除_完了 -->
+
+
+				<!-- メルマガ初期表示 -->
+				<accessCode>MAILMAG_INDEX_INDEX</accessCode>		<!-- メルマガ初期表示 -->
+
+
+				<!-- メルマガ管理 -->
+				<accessCode>MAILMAG_LIST_INDEX</accessCode>			<!-- メルマガ一覧_初期表示 -->
+				<accessCode>MAILMAG_LIST_SEARCH</accessCode>		<!-- メルマガ一覧_検索 -->
+				<accessCode>MAILMAG_LIST_CHANGEPAGE</accessCode>	<!-- メルマガ一覧_ページ遷移 -->
+				<accessCode>MAILMAG_LIST_CHANGEMAXROW</accessCode>	<!-- メルマガ一覧_最大表示件数変更 -->
+				<accessCode>MAILMAG_LIST_SEARCHAGAIN</accessCode>	<!-- メルマガ一覧_別画面から一覧を表示 -->
+
+				<accessCode>MAILMAG_DETAIL_INDEX</accessCode>		<!-- メルマガ詳細_初期表示 -->
+				<accessCode>MAILMAG_DETAIL_BACK</accessCode>		<!-- メルマガ詳細_戻る -->
+				<accessCode>MAILMAG_DETAIL_OUTPUT</accessCode>			<!-- メルマガ詳細_csv出力 -->
+
+				<!-- メルマガオプション -->
+				<accessCode>MAILMAGOPT_HEADER_INPUT_INDEX</accessCode>		<!-- メルマガヘッダメッセージ入力画面 -->
+				<accessCode>MAILMAGOPT_HEADER_INPUT_CONF</accessCode>		<!-- メルマガヘッダメッセージ確認画面 -->
+				<accessCode>MAILMAGOPT_HEADER_INPUT_SUBMIT</accessCode>		<!-- メルマガヘッダメッセージ登録 -->
+				<accessCode>MAILMAGOPT_HEADER_INPUT_COMP</accessCode>		<!-- メルマガヘッダメッセージ登録完了 -->
+
+				<accessCode>MAILMAGOPT_HEADER_EDIT_INDEX</accessCode>		<!-- メルマガヘッダメッセージ編集入力画面 -->
+				<accessCode>MAILMAGOPT_HEADER_EDIT_CONF</accessCode>		<!-- メルマガヘッダメッセージ編集確認画面 -->
+				<accessCode>MAILMAGOPT_HEADER_EDIT_SUBMIT</accessCode>		<!-- メルマガヘッダメッセージ編集登録 -->
+				<accessCode>MAILMAGOPT_HEADER_EDIT_COMP</accessCode>		<!-- メルマガヘッダメッセージ編集登録完了 -->
+
+				<accessCode>MAILMAGOPT_HEADER_DETAIL_INDEX</accessCode>		<!-- メルマガヘッダメッセージ詳細画面 -->
+
+				<accessCode>MAILMAGOPT_HEADER_LIST</accessCode>				<!-- メルマガヘッダメッセージ一覧画面 -->
+
+				<accessCode>MAILMAGOPT_HEADER_DELETE_INDEX</accessCode>		<!-- メルマガヘッダメッセージ削除画面 -->
+				<accessCode>MAILMAGOPT_HEADER_DELETE_SUBMIT</accessCode>		<!-- メルマガヘッダメッセージ削除登録 -->
+				<accessCode>MAILMAGOPT_HEADER_DELETE_COMP</accessCode>		<!-- メルマガヘッダメッセージ削除登録完了 -->
+
+
+				<!-- お知らせ管理 -->
+				<accessCode>INFORMATION_MENU_INDEX</accessCode>			<!-- お知らせ管理_メニュー -->
+
+				<accessCode>INFORMATION_LIST_INDEX</accessCode>			<!-- お知らせ一覧_初期表示 -->
+				<accessCode>INFORMATION_EDIT_INDEX</accessCode>			<!-- お知らせ編集_初期表示 -->
+				<accessCode>INFORMATION_EDIT_BACK</accessCode>			<!-- お知らせ編集_戻る -->
+				<accessCode>INFORMATION_EDIT_CONF</accessCode>			<!-- お知らせ編集_確認 -->
+				<accessCode>INFORMATION_EDIT_CORRECT</accessCode>		<!-- お知らせ編集_訂正 -->
+				<accessCode>INFORMATION_EDIT_SUBMIT</accessCode>		<!-- お知らせ編集_登録 -->
+				<accessCode>INFORMATION_EDIT_COMP</accessCode>			<!-- お知らせ編集_完了 -->
+
+				<!-- パスワード編集 -->
+				<accessCode>CHANGEPASSWORD_EDIT_INDEX</accessCode>		<!-- パスワード編集_初期表示 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CONF</accessCode>		<!-- パスワード編集_確認 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CORRECT</accessCode>	<!-- パスワード編集_訂正 -->
+				<accessCode>CHANGEPASSWORD_EDIT_SUBMIT</accessCode>		<!-- パスワード編集_登録 -->
+				<accessCode>CHANGEPASSWORD_EDIT_COMP</accessCode>		<!-- パスワード編集_完了 -->
+
+				<!-- 店舗一覧 -->
+				<accessCode>SHOPLIST_DETAIL_INDEX</accessCode>			<!-- 店舗一覧詳細 初期表示 -->
+				<accessCode>SHOPLIST_DETAIL_DELETE</accessCode>			<!-- 店舗一覧詳細 削除 -->
+				<accessCode>SHOPLIST_DETAIL_DELETECOMP</accessCode>		<!-- 店舗一覧詳細 削除完了 -->
+				<accessCode>SHOPLIST_DETAIL_BACKTOINDEX</accessCode>	<!-- 店舗一覧詳細 インデックスへ戻る -->
+				<accessCode>SHOPLIST_EDIT_INDEX</accessCode>			<!-- 店舗一覧編集 初期表示 -->
+				<accessCode>SHOPLIST_EDIT_CONF</accessCode>				<!-- 店舗一覧編集 確認 -->
+				<accessCode>SHOPLIST_EDIT_FAILGEO</accessCode>			<!-- 店舗一覧編集 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_EDIT_CORRECT</accessCode>			<!-- 店舗一覧編集 訂正 -->
+				<accessCode>SHOPLIST_EDIT_SUBMIT</accessCode>			<!-- 店舗一覧編集 更新 -->
+				<accessCode>SHOPLIST_EDIT_COMP</accessCode>				<!-- 店舗一覧編集 更新完了 -->
+				<accessCode>SHOPLIST_EDIT_BACK</accessCode>				<!-- 店舗一覧編集 戻る -->
+				<accessCode>SHOPLIST_EDIT_UPMATERIAL</accessCode>		<!-- 店舗一覧編集 素材アップ -->
+				<accessCode>SHOPLIST_EDIT_DELMATERIAL</accessCode>		<!-- 店舗一覧編集 素材削除 -->
+				<accessCode>SHOPLIST_EDIT_BACKINDEX</accessCode>		<!-- 店舗一覧編集 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INDEX_INDEX</accessCode>			<!-- 店舗一覧 インデックス -->
+				<accessCode>SHOPLIST_INPUT_INDEX</accessCode>			<!-- 店舗一覧登録 初期表示 -->
+				<accessCode>SHOPLIST_INPUT_CONF</accessCode>			<!-- 店舗一覧登録 確認 -->
+				<accessCode>SHOPLIST_INPUT_SUBMIT</accessCode>			<!-- 店舗一覧登録 登録 -->
+				<accessCode>SHOPLIST_INPUT_COMP</accessCode>			<!-- 店舗一覧登録 完了 -->
+				<accessCode>SHOPLIST_INPUT_CORRECT</accessCode>			<!-- 店舗一覧登録 訂正 -->
+				<accessCode>SHOPLIST_INPUT_FAILGEO</accessCode>			<!-- 店舗一覧登録 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUT_BACKINDEX</accessCode>		<!-- 店舗一覧登録 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INPUT_UPMATERIAL</accessCode>		<!-- 店舗一覧登録 素材アップ -->
+				<accessCode>SHOPLIST_INPUT_DELMATERIAL</accessCode>		<!-- 店舗一覧登録 素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_INDEX</accessCode>		<!-- 店舗一覧CSVインプット 初期表示 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEOLIST</accessCode>	<!-- 店舗一覧CSVインプット リストのジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEODETAIL</accessCode><!-- 店舗一覧CSVインプット 詳細のジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_EDIT</accessCode>			<!-- 店舗一覧CSVインプット 詳細編集 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACK</accessCode>			<!-- 店舗一覧CSVインプット 戻る -->
+				<accessCode>SHOPLIST_INPUTCSV_CONFDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細確認 -->
+				<accessCode>SHOPLIST_INPUTCSV_CORRECT</accessCode>		<!-- 店舗一覧CSVインプット 詳細訂正 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMITDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細更新 -->
+				<accessCode>SHOPLIST_INPUTCSV_UPMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材アップ -->
+				<accessCode>SHOPLIST_INPUTCSV_DELMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMIT</accessCode>		<!-- 店舗一覧CSVインプット 一括登録 -->
+				<accessCode>SHOPLIST_INPUTCSV_DELETE</accessCode>		<!-- 店舗一覧CSVインプット 一括削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_COMP</accessCode>			<!-- 店舗一覧CSVインプット 一括登録完了 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACKINDEX</accessCode>	<!-- 店舗一覧CSVインプット インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_INDEX</accessCode>			<!-- 店舗一覧リスト 初期表示 -->
+				<accessCode>SHOPLIST_LIST_SEARCH</accessCode>			<!-- 店舗一覧リスト 検索 -->
+				<accessCode>SHOPLIST_LIST_CHANGEMAXROW</accessCode>		<!-- 店舗一覧リスト 最大表示数変更 -->
+				<accessCode>SHOPLIST_LIST_CHANGEPAGE</accessCode>		<!-- 店舗一覧リスト ページ変更 -->
+				<accessCode>SHOPLIST_LIST_BACKINDEX</accessCode>		<!-- 店舗一覧リスト インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_IMPORTCSV</accessCode>		<!-- 店舗一覧リスト CSVインポート -->
+				<accessCode>SHOPLIST_LIST_EXPORT</accessCode>			<!-- 店舗一覧リスト CSVエクスポート -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_LIST</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） リスト -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_EDIT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 変更 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_UPDATE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 更新 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_INPUT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 登録 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CONF</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 確認 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_SUBMIT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 反映 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_COMP</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 完了 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CORRECT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_DELETE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 削除 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_BACKINDEX</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+
+				<!-- 駅グループ管理 -->
+				<accessCode>TERMINAL_INPUT_INDEX</accessCode>		<!-- 駅グループ登録_初期表示 -->
+				<accessCode>TERMINAL_INPUT_CONF</accessCode>			<!-- 駅グループ登録_確認 -->
+				<accessCode>TERMINAL_INPUT_CORRECT</accessCode>		<!-- 駅グループ登録_訂正 -->
+				<accessCode>TERMINAL_INPUT_SUBMIT</accessCode>		<!-- 駅グループ登録_登録 -->
+				<accessCode>TERMINAL_INPUT_COMP</accessCode>			<!-- 駅グループ登録_完了 -->
+				<accessCode>TERMINAL_LIST_INDEX</accessCode>			<!-- 駅グループ一覧_初期表示 -->
+				<accessCode>TERMINAL_EDIT_INDEX</accessCode>			<!-- 駅グループ編集_初期表示 -->
+				<accessCode>TERMINAL_EDIT_BACK</accessCode>			<!-- 駅グループ編集_戻る -->
+				<accessCode>TERMINAL_EDIT_CONF</accessCode>			<!-- 駅グループ編集_確認 -->
+				<accessCode>TERMINAL_EDIT_CORRECT</accessCode>		<!-- 駅グループ編集_訂正 -->
+				<accessCode>TERMINAL_EDIT_SUBMIT</accessCode>		<!-- 駅グループ編集_登録 -->
+				<accessCode>TERMINAL_EDIT_COMP</accessCode>			<!-- 駅グループ編集_完了 -->
+				<accessCode>TERMINAL_DELETE_INDEX</accessCode>		<!-- 駅グループ削除_初期表示 -->
+				<accessCode>TERMINAL_DELETE_BACK</accessCode>		<!-- 駅グループ削除_戻る -->
+				<accessCode>TERMINAL_DELETE_SUBMIT</accessCode>		<!-- 駅グループ削除_登録 -->
+				<accessCode>TERMINAL_DELETE_COMP</accessCode>		<!-- 駅グループ削除_完了 -->
+
+				<accessCode>MISCHIEF_INPUT_INDEX</accessCode>
+				<accessCode>MISCHIEF_INPUT_CONF</accessCode>
+				<accessCode>MISCHIEF_INPUT_CORRECT</accessCode>
+				<accessCode>MISCHIEF_INPUT_SUBMIT</accessCode>
+				<accessCode>MISCHIEF_INPUT_COMP</accessCode>
+				<accessCode>MISCHIEF_LIST_INDEX</accessCode>
+				<accessCode>MISCHIEF_DETAIL_INDEX</accessCode>
+				<accessCode>MISCHIEF_DETAIL_BACK</accessCode>
+				<accessCode>MISCHIEF_EDIT_INDEX</accessCode>
+				<accessCode>MISCHIEF_EDIT_CONF</accessCode>
+				<accessCode>MISCHIEF_EDIT_SUBMIT</accessCode>
+				<accessCode>MISCHIEF_EDIT_COMP</accessCode>
+				<accessCode>MISCHIEF_EDIT_BACK</accessCode>
+				<accessCode>MISCHIEF_DELETE_INDEX</accessCode>
+				<accessCode>MISCHIEF_DELETE_COMP</accessCode>
+
+				<accessCode>SHOP_MANAGEMENT_INDEX</accessCode>				<!-- 店舗管理 初期表示 -->
+				<accessCode>SHOP_MANAGEMENT_SHOPLIST_CSV</accessCode>		<!-- 店舗管理 CSV出力 -->
+
+				<accessCode>TAG_EDIT_INDEX</accessCode>
+				<accessCode>TAG_EDIT_EDIT</accessCode>
+				<accessCode>TAG_EDIT_DELETE</accessCode>
+
+				<!-- 共通処理 -->
+				<accessCode>UTIL_IMAGEUTILITY_DISPLAYWEBDATAIMAGE</accessCode><!-- 画像表示_WEBデータ画像表示 -->
+
+			</accessCodes>
+		</authLevel>
+
+		<!-- ###################  自社スタッフの権限設定  ################### -->
+		<authLevel>
+			<authLevelCode>2</authLevelCode>
+			<authLevelName>自社スタッフ</authLevelName>
+
+			<accessCodes>
+
+				<!-- TOPページ -->
+				<accessCode>TOP_MENU_INDEX</accessCode>			<!-- TOPページ_初期表示 -->
+
+				<!-- WEBデータ管理 -->
+				<accessCode>WEBDATA_INPUT_INDEX</accessCode>			<!-- WEBデータ登録_初期表示 -->
+				<accessCode>WEBDATA_INPUT_ADDASSIGNED</accessCode>		<!-- WEBデータ登録_路線追加 -->
+				<accessCode>WEBDATA_INPUT_DELETEASSIGNED</accessCode>	<!-- WEBデータ登録_路線削除 -->
+				<accessCode>WEBDATA_INPUT_UPMATERIAL</accessCode>		<!-- WEBデータ登録_素材アップロード -->
+				<accessCode>WEBDATA_INPUT_DELETEMATERIAL</accessCode>	<!-- WEBデータ登録_素材削除 -->
+				<accessCode>WEBDATA_INPUT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ登録_素材表示 -->
+				<accessCode>WEBDATA_INPUT_RESETSENTENCE4</accessCode>	<!-- WEBデータ登録_文章4クリア -->
+				<accessCode>WEBDATA_INPUT_CONF</accessCode>				<!-- WEBデータ登録_確認 -->
+				<accessCode>WEBDATA_INPUT_CORRECT</accessCode>			<!-- WEBデータ登録_訂正 -->
+				<accessCode>WEBDATA_INPUT_SUBMIT</accessCode>			<!-- WEBデータ登録_登録 -->
+				<accessCode>WEBDATA_INPUT_COMP</accessCode>				<!-- WEBデータ登録_完了 -->
+				<accessCode>WEBDATA_INPUT_COPY</accessCode>				<!-- WEBデータ登録_コピー -->
+				<accessCode>WEBDATA_INPUT_COPYCOMP</accessCode>			<!-- WEBデータ登録_コピー完了 -->
+				<accessCode>WEBDATA_INPUT_BACKLIST</accessCode>			<!-- WEBデータ登録_一覧へ戻る -->
+				<accessCode>WEBDATA_LIST_INDEX</accessCode>				<!-- WEBデータ一覧_初期表示 -->
+				<accessCode>WEBDATA_LIST_SEARCH</accessCode>			<!-- WEBデータ一覧_検索 -->
+				<accessCode>WEBDATA_LIST_CHANGEPAGE</accessCode>		<!-- WEBデータ一覧_ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGECOUNTPAGE</accessCode>	<!-- WEBデータ一覧_件数ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGEMAXROW</accessCode>		<!-- WEBデータ一覧_最大表示件数変更 -->
+				<accessCode>WEBDATA_LIST_SEARCHAGAIN</accessCode>		<!-- WEBデータ一覧_別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_BACKSEARCH</accessCode>		<!-- WEBデータ一覧_一括処理別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_LUMPCOPY</accessCode>			<!-- WEBデータ一覧_一括コピー -->
+				<accessCode>WEBDATA_LIST_LUMPDECIDE</accessCode>		<!-- WEBデータ一覧_一括確定 -->
+				<accessCode>WEBDATA_DETAIL_INDEX</accessCode>			<!-- WEBデータ詳細_初期表示 -->
+				<accessCode>WEBDATA_DETAIL_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ詳細_素材表示 -->
+				<accessCode>WEBDATA_DETAIL_BACK</accessCode>			<!-- WEBデータ詳細_戻る -->
+				<accessCode>WEBDATA_EDIT_INDEX</accessCode>				<!-- WEBデータ編集_初期表示 -->
+				<accessCode>WEBDATA_EDIT_ADDASSIGNED</accessCode>		<!-- WEBデータ編集_路線追加 -->
+				<accessCode>WEBDATA_EDIT_DELETEASSIGNED</accessCode>	<!-- WEBデータ編集_路線削除 -->
+				<accessCode>WEBDATA_EDIT_UPMATERIAL</accessCode>		<!-- WEBデータ編集_素材アップロード -->
+				<accessCode>WEBDATA_EDIT_DELETEMATERIAL</accessCode>	<!-- WEBデータ編集_素材削除 -->
+				<accessCode>WEBDATA_EDIT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ編集_素材表示 -->
+				<accessCode>WEBDATA_EDIT_RESETSENTENCE4</accessCode>	<!-- WEBデータ編集_文章4クリア -->
+				<accessCode>WEBDATA_EDIT_CHANGESTATUS</accessCode>		<!-- WEBデータ編集_ステータス変更 -->
+				<accessCode>WEBDATA_EDIT_STATUSCOMP</accessCode>		<!-- WEBデータ編集_ステータス変更完了 -->
+				<accessCode>WEBDATA_EDIT_BACK</accessCode>				<!-- WEBデータ編集_戻る -->
+				<accessCode>WEBDATA_EDIT_CONF</accessCode>				<!-- WEBデータ編集_確認 -->
+				<accessCode>WEBDATA_EDIT_CORRECT</accessCode>			<!-- WEBデータ編集_訂正 -->
+				<accessCode>WEBDATA_EDIT_SUBMIT</accessCode>			<!-- WEBデータ編集_登録 -->
+				<accessCode>WEBDATA_EDIT_COMP</accessCode>				<!-- WEBデータ編集_完了 -->
+				<accessCode>WEBDATA_EDIT_BACKLIST</accessCode>			<!-- WEBデータ編集_一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_RESET_BACKLIST</accessCode>	<!-- WEBデータ編集_上下ボタンから一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_BACKTOP</accessCode>			<!-- WEBデータ編集_上下ボタンからTOPへ戻る -->
+				<accessCode>WEBDATA_EDIT_INDEXWEBDETAIL</accessCode>	<!-- WEBデータ編集_確認画面の店舗一覧へ遷移 -->
+				<accessCode>WEBDATA_DELETE_INDEX</accessCode>			<!-- WEBデータ削除_初期表示 -->
+				<accessCode>WEBDATA_DELETE_COMP</accessCode>			<!-- WEBデータ削除_完了 -->
+				<accessCode>WEBDATA_DELETE_BACKLIST</accessCode>		<!-- WEBデータ削除_一覧へ戻る -->
+				<accessCode>APPTEST_INPUT_INDEX</accessCode>			<!-- 応募テスト_初期表示 -->
+				<accessCode>APPTEST_INPUT_BACK</accessCode>				<!-- 応募テスト_戻る -->
+				<accessCode>APPTEST_INPUT_CONF</accessCode>				<!-- 応募テスト_確認 -->
+				<accessCode>APPTEST_INPUT_CORRECT</accessCode>			<!-- 応募テスト_訂正 -->
+				<accessCode>APPTEST_INPUT_SUBMIT</accessCode>			<!-- 応募テスト_登録 -->
+				<accessCode>APPTEST_INPUT_COMP</accessCode>				<!-- 応募テスト_完了 -->
+				<accessCode>APPTEST_INPUT_BACKLIST</accessCode>			<!-- 応募テスト_一覧へ戻る -->
+				<accessCode>LUMPCOPY_INPUT_INDEX</accessCode>			<!-- WEBデータ一括コピー_初期表示 -->
+				<accessCode>LUMPCOPY_INPUT_CONF</accessCode>			<!-- WEBデータ一括コピー_確認 -->
+				<accessCode>LUMPCOPY_INPUT_BACK</accessCode>			<!-- WEBデータ一括コピー_戻る -->
+				<accessCode>LUMPCOPY_INPUT_CORRECT</accessCode>			<!-- WEBデータ一括コピー_訂正 -->
+				<accessCode>LUMPCOPY_INPUT_SUBMIT</accessCode>			<!-- WEBデータ一括コピー_登録 -->
+				<accessCode>LUMPCOPY_INPUT_COMP</accessCode>			<!-- WEBデータ一括コピー_完了 -->
+				<accessCode>LUMPCOPY_INPUT_BACKLIST</accessCode>		<!-- WEBデータ一括コピー_一覧へ戻る -->
+				<accessCode>LUMPDECIDE_EDIT_INDEX</accessCode>			<!-- WEBデータ一括確定_初期表示 -->
+				<accessCode>LUMPDECIDE_EDIT_BACK</accessCode>			<!-- WEBデータ一括確定_戻る -->
+				<accessCode>LUMPDECIDE_EDIT_SUBMIT</accessCode>			<!-- WEBデータ一括確定_登録 -->
+				<accessCode>LUMPDECIDE_EDIT_COMP</accessCode>			<!-- WEBデータ一括確定_完了 -->
+				<accessCode>LUMPDECIDE_EDIT_BACKLIST</accessCode>		<!-- WEBデータ一括確定_一覧へ戻る -->
+
+				<!-- 顧客検索(サブウィンドウ) -->
+				<accessCode>CUSTOMERSEARCH_SELECT_INDEX</accessCode>			<!-- 顧客選択_初期表示 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_SEARCH</accessCode>			<!-- 顧客選択_検索 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEPAGE</accessCode>		<!-- 顧客選択_ページ遷移 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEMAXROW</accessCode>		<!-- 顧客選択_最大表示件数変更 -->
+
+				<!-- 顧客管理 -->
+				<accessCode>CUSTOMER_INPUT_INDEX</accessCode>			<!-- 顧客登録_初期表示 -->
+				<accessCode>CUSTOMER_INPUT_ADDASSIGNED</accessCode>		<!-- 顧客登録_担当追加 -->
+				<accessCode>CUSTOMER_INPUT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_INPUT_CONF</accessCode>			<!-- 顧客登録_確認 -->
+				<accessCode>CUSTOMER_INPUT_CORRECT</accessCode>			<!-- 顧客登録_訂正 -->
+				<accessCode>CUSTOMER_INPUT_SUBMIT</accessCode>			<!-- 顧客登録_登録 -->
+				<accessCode>CUSTOMER_INPUT_COMP</accessCode>			<!-- 顧客登録_完了 -->
+				<accessCode>CUSTOMER_LIST_INDEX</accessCode>			<!-- 顧客一覧_初期表示 -->
+				<accessCode>CUSTOMER_LIST_SEARCH</accessCode>			<!-- 顧客一覧_検索 -->
+				<accessCode>CUSTOMER_LIST_CHANGEPAGE</accessCode>		<!-- 顧客一覧_ページ遷移 -->
+				<accessCode>CUSTOMER_LIST_CHANGEMAXROW</accessCode>		<!-- 顧客一覧_最大表示件数変更 -->
+				<accessCode>CUSTOMER_LIST_SEARCHAGAIN</accessCode>		<!-- 顧客一覧_別画面から一覧を表示 -->
+				<accessCode>CUSTOMER_DETAIL_INDEX</accessCode>			<!-- 顧客詳細_初期表示 -->
+				<accessCode>CUSTOMER_DETAIL_BACK</accessCode>			<!-- 顧客詳細_戻る -->
+				<accessCode>CUSTOMER_EDIT_INDEX</accessCode>			<!-- 顧客編集_初期表示 -->
+				<accessCode>CUSTOMER_EDIT_ADDASSIGNED</accessCode>		<!-- 顧客編集_担当追加 -->
+				<accessCode>CUSTOMER_EDIT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_EDIT_BACK</accessCode>				<!-- 顧客編集_戻る -->
+				<accessCode>CUSTOMER_EDIT_CONF</accessCode>				<!-- 顧客編集_確認 -->
+				<accessCode>CUSTOMER_EDIT_CORRECT</accessCode>			<!-- 顧客編集_訂正 -->
+				<accessCode>CUSTOMER_EDIT_SUBMIT</accessCode>			<!-- 顧客編集_登録 -->
+				<accessCode>CUSTOMER_EDIT_COMP</accessCode>				<!-- 顧客編集_完了 -->
+				<accessCode>CUSTOMER_EDIT_BACKLIST</accessCode>			<!-- 顧客編集_一覧へ戻る -->
+
+				<!-- GCWコード管理 -->
+				<accessCode>GCW_LIST_INDEX</accessCode>					<!-- GCW一覧_初期表示 -->
+				<accessCode>GCW_LIST_SEARCH</accessCode>				<!-- GCW一覧_検索 -->
+				<accessCode>GCW_LIST_CHANGEPAGE</accessCode>			<!-- GCW一覧_ページ遷移 -->
+				<accessCode>GCW_LIST_CHANGEMAXROW</accessCode>			<!-- GCW一覧_最大表示件数変更 -->
+				<accessCode>GCW_LIST_CHANGESORT</accessCode>			<!-- GCWコード一覧_表示順変更 -->
+				<accessCode>GCW_LIST_SEARCHAGAIN</accessCode>			<!-- GCW一覧_別画面から一覧を表示 -->
+
+				<!-- 応募管理 -->
+				<accessCode>APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- プレ応募管理 -->
+				<accessCode>PRE_APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>PRE_APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>PRE_APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>PRE_APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 気になる管理 -->
+				<accessCode>INTEREST_LIST_INDEX</accessCode>		<!-- 応募一覧_初期表示 -->
+				<accessCode>INTEREST_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>INTEREST_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>INTEREST_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>INTEREST_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>INTEREST_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 会員管理 -->
+				<accessCode>MEMBER_LIST_INDEX</accessCode>				<!-- 会員一覧_初期表示 -->
+				<accessCode>MEMBER_LIST_SEARCH</accessCode>				<!-- 会員一覧_検索 -->
+				<accessCode>MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- 会員一覧_ページ遷移 -->
+				<accessCode>MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- 会員一覧_最大表示件数変更 -->
+				<accessCode>MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- 会員一覧_別画面から一覧を表示 -->
+				<accessCode>MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- 会員一覧_メルマガ送信 -->
+				<accessCode>MEMBER_LIST_OUTPUT</accessCode>				<!-- 会員一覧_CSV出力 -->
+				<accessCode>MEMBER_DETAIL_INDEX</accessCode>			<!-- 会員詳細_初期表示 -->
+				<accessCode>MEMBER_DETAIL_BACK</accessCode>				<!-- 会員詳細_戻る -->
+				<accessCode>MEMBER_EDIT_INDEX</accessCode>				<!-- 会員編集_初期表示 -->
+				<accessCode>MEMBER_EDIT_BACK</accessCode>				<!-- 会員編集_戻る -->
+				<accessCode>MEMBER_EDIT_CONF</accessCode>				<!-- 会員編集_確認 -->
+				<accessCode>MEMBER_EDIT_CORRECT</accessCode>			<!-- 会員編集_訂正 -->
+				<accessCode>MEMBER_EDIT_SUBMIT</accessCode>				<!-- 会員編集_登録 -->
+				<accessCode>MEMBER_EDIT_COMP</accessCode>				<!-- 会員編集_完了 -->
+				<accessCode>MEMBER_DELETE_INDEX</accessCode>			<!-- 会員削除_初期表示 -->
+				<accessCode>MEMBER_DELETE_BACK</accessCode>				<!-- 会員削除_戻る -->
+				<accessCode>MEMBER_DELETE_SUBMIT</accessCode>			<!-- 会員削除_登録 -->
+				<accessCode>MEMBER_DELETE_COMP</accessCode>				<!-- 会員削除_完了 -->
+				<accessCode>MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- 会員向けメルマガ登録_初期表示 -->
+				<accessCode>MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- 会員向けメルマガ登録_確認 -->
+				<accessCode>MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- 会員向けメルマガ登録_戻る -->
+				<accessCode>MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- 会員向けメルマガ登録_訂正 -->
+				<accessCode>MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- 会員向けメルマガ登録_登録 -->
+				<accessCode>MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- 会員向けメルマガ登録_完了 -->
+
+				<!-- ジャスキル会員管理 -->
+				<accessCode>JUSKILL_MEMBER_LIST_INDEX</accessCode>				<!-- ジャスキル会員一覧_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCH</accessCode>				<!-- ジャスキル会員一覧_検索 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- ジャスキル会員一覧_ページ遷移 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- ジャスキル会員一覧_最大表示件数変更 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- ジャスキル会員一覧_別画面から一覧を表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- ジャスキル会員一覧_メルマガ送信 -->
+				<accessCode>JUSKILL_MEMBER_LIST_OUTPUT</accessCode>				<!-- ジャスキル会員一覧_CSV出力 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_INDEX</accessCode>			<!-- ジャスキル会員詳細_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_BACK</accessCode>				<!-- ジャスキル会員詳細_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_INDEX</accessCode>				<!-- ジャスキル会員編集_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_BACK</accessCode>				<!-- ジャスキル会員編集_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CONF</accessCode>				<!-- ジャスキル会員編集_確認 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CORRECT</accessCode>			<!-- ジャスキル会員編集_訂正 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_SUBMIT</accessCode>				<!-- ジャスキル会員編集_登録 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_COMP</accessCode>				<!-- ジャスキル会員編集_完了 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- ジャスキル会員向けメルマガ登録_初期表示 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- ジャスキル会員向けメルマガ登録_確認 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- ジャスキル会員向けメルマガ登録_戻る -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- ジャスキル会員向けメルマガ登録_訂正 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- ジャスキル会員向けメルマガ登録_登録 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- ジャスキル会員向けメルマガ登録_完了 -->
+
+				<accessCode>JUSKILL_MEMBER_DELETE_INDEX</accessCode>				<!-- ジャスキル会員削除_実行 -->
+				<accessCode>JUSKILL_MEMBER_DELETE_COMP</accessCode>				<!-- ジャスキル会員削除_完了 --><!-- 仮会員管理--><accessCode>TEMPMEMBER_LIST</accessCode>
+				<accessCode>TEMPMEMBER_DETAIL</accessCode>
+				<accessCode>TEMPMEMBER_EDIT</accessCode>
+
+
+				<!-- パスワード編集 -->
+				<accessCode>CHANGEPASSWORD_EDIT_INDEX</accessCode>		<!-- パスワード編集_初期表示 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CONF</accessCode>		<!-- パスワード編集_確認 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CORRECT</accessCode>	<!-- パスワード編集_訂正 -->
+				<accessCode>CHANGEPASSWORD_EDIT_SUBMIT</accessCode>		<!-- パスワード編集_登録 -->
+				<accessCode>CHANGEPASSWORD_EDIT_COMP</accessCode>		<!-- パスワード編集_完了 -->
+
+				<!-- 店舗一覧 -->
+				<accessCode>SHOPLIST_DETAIL_INDEX</accessCode>			<!-- 店舗一覧詳細 初期表示 -->
+				<accessCode>SHOPLIST_DETAIL_DELETE</accessCode>			<!-- 店舗一覧詳細 削除 -->
+				<accessCode>SHOPLIST_DETAIL_DELETECOMP</accessCode>		<!-- 店舗一覧詳細 削除完了 -->
+				<accessCode>SHOPLIST_DETAIL_BACKTOINDEX</accessCode>	<!-- 店舗一覧詳細 インデックスへ戻る -->
+				<accessCode>SHOPLIST_EDIT_INDEX</accessCode>			<!-- 店舗一覧編集 初期表示 -->
+				<accessCode>SHOPLIST_EDIT_CONF</accessCode>				<!-- 店舗一覧編集 確認 -->
+				<accessCode>SHOPLIST_EDIT_FAILGEO</accessCode>			<!-- 店舗一覧編集 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_EDIT_CORRECT</accessCode>			<!-- 店舗一覧編集 訂正 -->
+				<accessCode>SHOPLIST_EDIT_SUBMIT</accessCode>			<!-- 店舗一覧編集 更新 -->
+				<accessCode>SHOPLIST_EDIT_COMP</accessCode>				<!-- 店舗一覧編集 更新完了 -->
+				<accessCode>SHOPLIST_EDIT_BACK</accessCode>				<!-- 店舗一覧編集 戻る -->
+				<accessCode>SHOPLIST_EDIT_UPMATERIAL</accessCode>		<!-- 店舗一覧編集 素材アップ -->
+				<accessCode>SHOPLIST_EDIT_DELMATERIAL</accessCode>		<!-- 店舗一覧編集 素材削除 -->
+				<accessCode>SHOPLIST_EDIT_BACKINDEX</accessCode>		<!-- 店舗一覧編集 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INDEX_INDEX</accessCode>			<!-- 店舗一覧 インデックス -->
+				<accessCode>SHOPLIST_INPUT_INDEX</accessCode>			<!-- 店舗一覧登録 初期表示 -->
+				<accessCode>SHOPLIST_INPUT_CONF</accessCode>			<!-- 店舗一覧登録 確認 -->
+				<accessCode>SHOPLIST_INPUT_SUBMIT</accessCode>			<!-- 店舗一覧登録 登録 -->
+				<accessCode>SHOPLIST_INPUT_COMP</accessCode>			<!-- 店舗一覧登録 完了 -->
+				<accessCode>SHOPLIST_INPUT_CORRECT</accessCode>			<!-- 店舗一覧登録 訂正 -->
+				<accessCode>SHOPLIST_INPUT_FAILGEO</accessCode>			<!-- 店舗一覧登録 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUT_BACKINDEX</accessCode>		<!-- 店舗一覧登録 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INPUT_UPMATERIAL</accessCode>		<!-- 店舗一覧登録 素材アップ -->
+				<accessCode>SHOPLIST_INPUT_DELMATERIAL</accessCode>		<!-- 店舗一覧登録 素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_INDEX</accessCode>		<!-- 店舗一覧CSVインプット 初期表示 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEOLIST</accessCode>	<!-- 店舗一覧CSVインプット リストのジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEODETAIL</accessCode><!-- 店舗一覧CSVインプット 詳細のジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_EDIT</accessCode>			<!-- 店舗一覧CSVインプット 詳細編集 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACK</accessCode>			<!-- 店舗一覧CSVインプット 戻る -->
+				<accessCode>SHOPLIST_INPUTCSV_CONFDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細確認 -->
+				<accessCode>SHOPLIST_INPUTCSV_CORRECT</accessCode>		<!-- 店舗一覧CSVインプット 詳細訂正 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMITDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細更新 -->
+				<accessCode>SHOPLIST_INPUTCSV_UPMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材アップ -->
+				<accessCode>SHOPLIST_INPUTCSV_DELMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMIT</accessCode>		<!-- 店舗一覧CSVインプット 一括登録 -->
+				<accessCode>SHOPLIST_INPUTCSV_DELETE</accessCode>		<!-- 店舗一覧CSVインプット 一括削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_COMP</accessCode>			<!-- 店舗一覧CSVインプット 一括登録完了 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACKINDEX</accessCode>	<!-- 店舗一覧CSVインプット インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_INDEX</accessCode>			<!-- 店舗一覧リスト 初期表示 -->
+				<accessCode>SHOPLIST_LIST_SEARCH</accessCode>			<!-- 店舗一覧リスト 検索 -->
+				<accessCode>SHOPLIST_LIST_CHANGEMAXROW</accessCode>		<!-- 店舗一覧リスト 最大表示数変更 -->
+				<accessCode>SHOPLIST_LIST_CHANGEPAGE</accessCode>		<!-- 店舗一覧リスト ページ変更 -->
+				<accessCode>SHOPLIST_LIST_BACKINDEX</accessCode>		<!-- 店舗一覧リスト インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_IMPORTCSV</accessCode>		<!-- 店舗一覧リスト CSVインポート -->
+				<accessCode>SHOPLIST_LIST_EXPORT</accessCode>			<!-- 店舗一覧リスト CSVエクスポート -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_LIST</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） リスト -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_EDIT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 変更 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_UPDATE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 更新 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_INPUT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 登録 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CONF</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 確認 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_SUBMIT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 反映 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_COMP</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 完了 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CORRECT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_DELETE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 削除 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_BACKINDEX</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+
+				<!-- 共通処理 -->
+				<accessCode>UTIL_IMAGEUTILITY_DISPLAYWEBDATAIMAGE</accessCode><!-- 画像表示_WEBデータ画像表示 -->
+
+			</accessCodes>
+		</authLevel>
+
+
+		<!-- ###################  代理店の権限設定  ################### -->
+		<authLevel>
+			<authLevelCode>3</authLevelCode>
+			<authLevelName>代理店</authLevelName>
+
+			<accessCodes>
+
+				<!-- TOPページ -->
+				<accessCode>TOP_MENU_INDEX</accessCode>				<!-- TOPページ_初期表示 -->
+
+				<!-- WEBデータ管理 -->
+				<accessCode>WEBDATA_INPUT_INDEX</accessCode>			<!-- WEBデータ登録_初期表示 -->
+				<accessCode>WEBDATA_INPUT_ADDASSIGNED</accessCode>		<!-- WEBデータ登録_路線追加 -->
+				<accessCode>WEBDATA_INPUT_DELETEASSIGNED</accessCode>	<!-- WEBデータ登録_路線削除 -->
+				<accessCode>WEBDATA_INPUT_UPMATERIAL</accessCode>		<!-- WEBデータ登録_素材アップロード -->
+				<accessCode>WEBDATA_INPUT_DELETEMATERIAL</accessCode>	<!-- WEBデータ登録_素材削除 -->
+				<accessCode>WEBDATA_INPUT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ登録_素材表示 -->
+				<accessCode>WEBDATA_INPUT_RESETSENTENCE4</accessCode>	<!-- WEBデータ登録_文章4クリア -->
+				<accessCode>WEBDATA_INPUT_CONF</accessCode>				<!-- WEBデータ登録_確認 -->
+				<accessCode>WEBDATA_INPUT_CORRECT</accessCode>			<!-- WEBデータ登録_訂正 -->
+				<accessCode>WEBDATA_INPUT_SUBMIT</accessCode>			<!-- WEBデータ登録_登録 -->
+				<accessCode>WEBDATA_INPUT_COMP</accessCode>				<!-- WEBデータ登録_完了 -->
+				<accessCode>WEBDATA_INPUT_COPY</accessCode>				<!-- WEBデータ登録_コピー -->
+				<accessCode>WEBDATA_INPUT_COPYCOMP</accessCode>			<!-- WEBデータ登録_コピー完了 -->
+				<accessCode>WEBDATA_INPUT_BACKLIST</accessCode>			<!-- WEBデータ登録_一覧へ戻る -->
+				<accessCode>WEBDATA_LIST_INDEX</accessCode>				<!-- WEBデータ一覧_初期表示 -->
+				<accessCode>WEBDATA_LIST_SEARCH</accessCode>			<!-- WEBデータ一覧_検索 -->
+				<accessCode>WEBDATA_LIST_CHANGEPAGE</accessCode>		<!-- WEBデータ一覧_ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGEMAXROW</accessCode>		<!-- WEBデータ一覧_最大表示件数変更 -->
+				<accessCode>WEBDATA_LIST_SEARCHAGAIN</accessCode>		<!-- WEBデータ一覧_別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_BACKSEARCH</accessCode>		<!-- WEBデータ一覧_一括処理別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_LUMPCOPY</accessCode>			<!-- WEBデータ一覧_一括コピー -->
+				<accessCode>WEBDATA_LIST_LUMPDECIDE</accessCode>		<!-- WEBデータ一覧_一括確定 -->
+				<accessCode>WEBDATA_DETAIL_INDEX</accessCode>			<!-- WEBデータ詳細_初期表示 -->
+				<accessCode>WEBDATA_DETAIL_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ詳細_素材表示 -->
+				<accessCode>WEBDATA_DETAIL_BACK</accessCode>			<!-- WEBデータ詳細_戻る -->
+				<accessCode>WEBDATA_EDIT_INDEX</accessCode>				<!-- WEBデータ編集_初期表示 -->
+				<accessCode>WEBDATA_EDIT_ADDASSIGNED</accessCode>		<!-- WEBデータ編集_路線追加 -->
+				<accessCode>WEBDATA_EDIT_DELETEASSIGNED</accessCode>	<!-- WEBデータ編集_路線削除 -->
+				<accessCode>WEBDATA_EDIT_UPMATERIAL</accessCode>		<!-- WEBデータ編集_素材アップロード -->
+				<accessCode>WEBDATA_EDIT_DELETEMATERIAL</accessCode>	<!-- WEBデータ編集_素材削除 -->
+				<accessCode>WEBDATA_EDIT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ編集_素材表示 -->
+				<accessCode>WEBDATA_EDIT_RESETSENTENCE4</accessCode>	<!-- WEBデータ編集_文章4クリア -->
+				<accessCode>WEBDATA_EDIT_CHANGESTATUS</accessCode>		<!-- WEBデータ編集_ステータス変更 -->
+				<accessCode>WEBDATA_EDIT_STATUSCOMP</accessCode>		<!-- WEBデータ編集_ステータス変更完了 -->
+				<accessCode>WEBDATA_EDIT_BACK</accessCode>				<!-- WEBデータ編集_戻る -->
+				<accessCode>WEBDATA_EDIT_CONF</accessCode>				<!-- WEBデータ編集_確認 -->
+				<accessCode>WEBDATA_EDIT_CORRECT</accessCode>			<!-- WEBデータ編集_訂正 -->
+				<accessCode>WEBDATA_EDIT_SUBMIT</accessCode>			<!-- WEBデータ編集_登録 -->
+				<accessCode>WEBDATA_EDIT_COMP</accessCode>				<!-- WEBデータ編集_完了 -->
+				<accessCode>WEBDATA_EDIT_BACKLIST</accessCode>			<!-- WEBデータ編集_一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_RESET_BACKLIST</accessCode>	<!-- WEBデータ編集_上下ボタンから一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_BACKTOP</accessCode>			<!-- WEBデータ編集_上下ボタンからTOPへ戻る -->
+				<accessCode>WEBDATA_EDIT_INDEXWEBDETAIL</accessCode>	<!-- WEBデータ編集_確認画面の店舗一覧へ遷移 -->
+				<accessCode>WEBDATA_DELETE_INDEX</accessCode>			<!-- WEBデータ削除_初期表示 -->
+				<accessCode>WEBDATA_DELETE_COMP</accessCode>			<!-- WEBデータ削除_完了 -->
+				<accessCode>WEBDATA_DELETE_BACKLIST</accessCode>		<!-- WEBデータ削除_一覧へ戻る -->
+				<accessCode>APPTEST_INPUT_INDEX</accessCode>			<!-- 応募テスト_初期表示 -->
+				<accessCode>APPTEST_INPUT_BACK</accessCode>				<!-- 応募テスト_戻る -->
+				<accessCode>APPTEST_INPUT_CONF</accessCode>				<!-- 応募テスト_確認 -->
+				<accessCode>APPTEST_INPUT_CORRECT</accessCode>			<!-- 応募テスト_訂正 -->
+				<accessCode>APPTEST_INPUT_SUBMIT</accessCode>			<!-- 応募テスト_登録 -->
+				<accessCode>APPTEST_INPUT_COMP</accessCode>				<!-- 応募テスト_完了 -->
+				<accessCode>APPTEST_INPUT_BACKLIST</accessCode>			<!-- 応募テスト_一覧へ戻る -->
+				<accessCode>LUMPCOPY_INPUT_INDEX</accessCode>			<!-- WEBデータ一括コピー_初期表示 -->
+				<accessCode>LUMPCOPY_INPUT_CONF</accessCode>			<!-- WEBデータ一括コピー_確認 -->
+				<accessCode>LUMPCOPY_INPUT_BACK</accessCode>			<!-- WEBデータ一括コピー_戻る -->
+				<accessCode>LUMPCOPY_INPUT_CORRECT</accessCode>			<!-- WEBデータ一括コピー_訂正 -->
+				<accessCode>LUMPCOPY_INPUT_SUBMIT</accessCode>			<!-- WEBデータ一括コピー_登録 -->
+				<accessCode>LUMPCOPY_INPUT_COMP</accessCode>			<!-- WEBデータ一括コピー_完了 -->
+				<accessCode>LUMPCOPY_INPUT_BACKLIST</accessCode>		<!-- WEBデータ一括コピー_一覧へ戻る -->
+
+				<!-- 顧客検索(サブウィンドウ) -->
+				<accessCode>CUSTOMERSEARCH_SELECT_INDEX</accessCode>			<!-- 顧客選択_初期表示 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_SEARCH</accessCode>			<!-- 顧客選択_検索 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEPAGE</accessCode>		<!-- 顧客選択_ページ遷移 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEMAXROW</accessCode>		<!-- 顧客選択_最大表示件数変更 -->
+
+				<!-- 顧客管理 -->
+				<accessCode>CUSTOMER_LIST_INDEX</accessCode>			<!-- 顧客一覧_初期表示 -->
+				<accessCode>CUSTOMER_LIST_SEARCH</accessCode>			<!-- 顧客一覧_検索 -->
+				<accessCode>CUSTOMER_LIST_CHANGEPAGE</accessCode>		<!-- 顧客一覧_ページ遷移 -->
+				<accessCode>CUSTOMER_LIST_CHANGEMAXROW</accessCode>		<!-- 顧客一覧_最大表示件数変更 -->
+				<accessCode>CUSTOMER_LIST_SEARCHAGAIN</accessCode>		<!-- 顧客一覧_別画面から一覧を表示 -->
+				<accessCode>CUSTOMER_DETAIL_INDEX</accessCode>			<!-- 顧客詳細_初期表示 -->
+				<accessCode>CUSTOMER_DETAIL_BACK</accessCode>			<!-- 顧客詳細_戻る -->
+				<accessCode>CUSTOMER_EDIT_INDEX</accessCode>			<!-- 顧客編集_初期表示 -->
+				<accessCode>CUSTOMER_EDIT_CONF</accessCode>				<!-- 顧客編集_確認 -->
+				<accessCode>CUSTOMER_EDIT_CORRECT</accessCode>			<!-- 顧客編集_訂正 -->
+				<accessCode>CUSTOMER_EDIT_SUBMIT</accessCode>			<!-- 顧客編集_登録 -->
+				<accessCode>CUSTOMER_EDIT_COMP</accessCode>				<!-- 顧客編集_完了 -->
+				<accessCode>CUSTOMER_EDIT_BACKLIST</accessCode>			<!-- 顧客編集_一覧へ戻る -->
+
+				<!-- パスワード編集 -->
+				<accessCode>CHANGEPASSWORD_EDIT_INDEX</accessCode>		<!-- パスワード編集_初期表示 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CONF</accessCode>		<!-- パスワード編集_確認 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CORRECT</accessCode>	<!-- パスワード編集_訂正 -->
+				<accessCode>CHANGEPASSWORD_EDIT_SUBMIT</accessCode>		<!-- パスワード編集_登録 -->
+				<accessCode>CHANGEPASSWORD_EDIT_COMP</accessCode>		<!-- パスワード編集_完了 -->
+
+				<!-- 店舗一覧 -->
+				<accessCode>SHOPLIST_DETAIL_INDEX</accessCode>			<!-- 店舗一覧詳細 初期表示 -->
+				<accessCode>SHOPLIST_DETAIL_DELETE</accessCode>			<!-- 店舗一覧詳細 削除 -->
+				<accessCode>SHOPLIST_DETAIL_DELETECOMP</accessCode>		<!-- 店舗一覧詳細 削除完了 -->
+				<accessCode>SHOPLIST_DETAIL_BACKTOINDEX</accessCode>	<!-- 店舗一覧詳細 インデックスへ戻る -->
+				<accessCode>SHOPLIST_EDIT_INDEX</accessCode>			<!-- 店舗一覧編集 初期表示 -->
+				<accessCode>SHOPLIST_EDIT_CONF</accessCode>				<!-- 店舗一覧編集 確認 -->
+				<accessCode>SHOPLIST_EDIT_FAILGEO</accessCode>			<!-- 店舗一覧編集 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_EDIT_CORRECT</accessCode>			<!-- 店舗一覧編集 訂正 -->
+				<accessCode>SHOPLIST_EDIT_SUBMIT</accessCode>			<!-- 店舗一覧編集 更新 -->
+				<accessCode>SHOPLIST_EDIT_COMP</accessCode>				<!-- 店舗一覧編集 更新完了 -->
+				<accessCode>SHOPLIST_EDIT_BACK</accessCode>				<!-- 店舗一覧編集 戻る -->
+				<accessCode>SHOPLIST_EDIT_UPMATERIAL</accessCode>		<!-- 店舗一覧編集 素材アップ -->
+				<accessCode>SHOPLIST_EDIT_DELMATERIAL</accessCode>		<!-- 店舗一覧編集 素材削除 -->
+				<accessCode>SHOPLIST_EDIT_BACKINDEX</accessCode>		<!-- 店舗一覧編集 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INDEX_INDEX</accessCode>			<!-- 店舗一覧 インデックス -->
+				<accessCode>SHOPLIST_INPUT_INDEX</accessCode>			<!-- 店舗一覧登録 初期表示 -->
+				<accessCode>SHOPLIST_INPUT_CONF</accessCode>			<!-- 店舗一覧登録 確認 -->
+				<accessCode>SHOPLIST_INPUT_SUBMIT</accessCode>			<!-- 店舗一覧登録 登録 -->
+				<accessCode>SHOPLIST_INPUT_COMP</accessCode>			<!-- 店舗一覧登録 完了 -->
+				<accessCode>SHOPLIST_INPUT_CORRECT</accessCode>			<!-- 店舗一覧登録 訂正 -->
+				<accessCode>SHOPLIST_INPUT_FAILGEO</accessCode>			<!-- 店舗一覧登録 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUT_BACKINDEX</accessCode>		<!-- 店舗一覧登録 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INPUT_UPMATERIAL</accessCode>		<!-- 店舗一覧登録 素材アップ -->
+				<accessCode>SHOPLIST_INPUT_DELMATERIAL</accessCode>		<!-- 店舗一覧登録 素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_INDEX</accessCode>		<!-- 店舗一覧CSVインプット 初期表示 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEOLIST</accessCode>	<!-- 店舗一覧CSVインプット リストのジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEODETAIL</accessCode><!-- 店舗一覧CSVインプット 詳細のジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_EDIT</accessCode>			<!-- 店舗一覧CSVインプット 詳細編集 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACK</accessCode>			<!-- 店舗一覧CSVインプット 戻る -->
+				<accessCode>SHOPLIST_INPUTCSV_CONFDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細確認 -->
+				<accessCode>SHOPLIST_INPUTCSV_CORRECT</accessCode>		<!-- 店舗一覧CSVインプット 詳細訂正 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMITDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細更新 -->
+				<accessCode>SHOPLIST_INPUTCSV_UPMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材アップ -->
+				<accessCode>SHOPLIST_INPUTCSV_DELMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMIT</accessCode>		<!-- 店舗一覧CSVインプット 一括登録 -->
+				<accessCode>SHOPLIST_INPUTCSV_DELETE</accessCode>		<!-- 店舗一覧CSVインプット 一括削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_COMP</accessCode>			<!-- 店舗一覧CSVインプット 一括登録完了 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACKINDEX</accessCode>	<!-- 店舗一覧CSVインプット インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_INDEX</accessCode>			<!-- 店舗一覧リスト 初期表示 -->
+				<accessCode>SHOPLIST_LIST_SEARCH</accessCode>			<!-- 店舗一覧リスト 検索 -->
+				<accessCode>SHOPLIST_LIST_CHANGEMAXROW</accessCode>		<!-- 店舗一覧リスト 最大表示数変更 -->
+				<accessCode>SHOPLIST_LIST_CHANGEPAGE</accessCode>		<!-- 店舗一覧リスト ページ変更 -->
+				<accessCode>SHOPLIST_LIST_BACKINDEX</accessCode>		<!-- 店舗一覧リスト インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_IMPORTCSV</accessCode>		<!-- 店舗一覧リスト CSVインポート -->
+				<accessCode>SHOPLIST_LIST_EXPORT</accessCode>			<!-- 店舗一覧リスト CSVエクスポート -->
+
+				<!-- 共通処理 -->
+				<accessCode>UTIL_IMAGEUTILITY_DISPLAYWEBDATAIMAGE</accessCode><!-- 画像表示_WEBデータ画像表示 -->
+
+			</accessCodes>
+		</authLevel>
+
+		<!-- ###################  他社スタッフの権限設定  ################### -->
+		<authLevel>
+			<authLevelCode>4</authLevelCode>
+			<authLevelName>他社スタッフ</authLevelName>
+
+			<accessCodes>
+
+				<!-- TOPページ -->
+				<accessCode>TOP_MENU_INDEX</accessCode>			<!-- TOPページ_初期表示 -->
+
+				<!-- WEBデータ管理 -->
+				<accessCode>WEBDATA_INPUT_INDEX</accessCode>			<!-- WEBデータ登録_初期表示 -->
+				<accessCode>WEBDATA_INPUT_ADDASSIGNED</accessCode>		<!-- WEBデータ登録_路線追加 -->
+				<accessCode>WEBDATA_INPUT_DELETEASSIGNED</accessCode>	<!-- WEBデータ登録_路線削除 -->
+				<accessCode>WEBDATA_INPUT_UPMATERIAL</accessCode>		<!-- WEBデータ登録_素材アップロード -->
+				<accessCode>WEBDATA_INPUT_DELETEMATERIAL</accessCode>	<!-- WEBデータ登録_素材削除 -->
+				<accessCode>WEBDATA_INPUT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ登録_素材表示 -->
+				<accessCode>WEBDATA_INPUT_RESETSENTENCE4</accessCode>	<!-- WEBデータ登録_文章4クリア -->
+				<accessCode>WEBDATA_INPUT_CONF</accessCode>				<!-- WEBデータ登録_確認 -->
+				<accessCode>WEBDATA_INPUT_CORRECT</accessCode>			<!-- WEBデータ登録_訂正 -->
+				<accessCode>WEBDATA_INPUT_SUBMIT</accessCode>			<!-- WEBデータ登録_登録 -->
+				<accessCode>WEBDATA_INPUT_COMP</accessCode>				<!-- WEBデータ登録_完了 -->
+				<accessCode>WEBDATA_INPUT_COPY</accessCode>				<!-- WEBデータ登録_コピー -->
+				<accessCode>WEBDATA_INPUT_COPYCOMP</accessCode>			<!-- WEBデータ登録_コピー完了 -->
+				<accessCode>WEBDATA_INPUT_BACKLIST</accessCode>			<!-- WEBデータ登録_一覧へ戻る -->
+				<accessCode>WEBDATA_LIST_INDEX</accessCode>				<!-- WEBデータ一覧_初期表示 -->
+				<accessCode>WEBDATA_LIST_SEARCH</accessCode>			<!-- WEBデータ一覧_検索 -->
+				<accessCode>WEBDATA_LIST_CHANGEPAGE</accessCode>		<!-- WEBデータ一覧_ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGECOUNTPAGE</accessCode>	<!-- WEBデータ一覧_件数ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGEMAXROW</accessCode>		<!-- WEBデータ一覧_最大表示件数変更 -->
+				<accessCode>WEBDATA_LIST_SEARCHAGAIN</accessCode>		<!-- WEBデータ一覧_別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_BACKSEARCH</accessCode>		<!-- WEBデータ一覧_一括処理別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_LUMPCOPY</accessCode>			<!-- WEBデータ一覧_一括コピー -->
+				<accessCode>WEBDATA_LIST_LUMPDECIDE</accessCode>		<!-- WEBデータ一覧_一括確定 -->
+				<accessCode>WEBDATA_DETAIL_INDEX</accessCode>			<!-- WEBデータ詳細_初期表示 -->
+				<accessCode>WEBDATA_DETAIL_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ詳細_素材表示 -->
+				<accessCode>WEBDATA_DETAIL_BACK</accessCode>			<!-- WEBデータ詳細_戻る -->
+				<accessCode>WEBDATA_EDIT_INDEX</accessCode>				<!-- WEBデータ編集_初期表示 -->
+				<accessCode>WEBDATA_EDIT_ADDASSIGNED</accessCode>		<!-- WEBデータ編集_路線追加 -->
+				<accessCode>WEBDATA_EDIT_DELETEASSIGNED</accessCode>	<!-- WEBデータ編集_路線削除 -->
+				<accessCode>WEBDATA_EDIT_UPMATERIAL</accessCode>		<!-- WEBデータ編集_素材アップロード -->
+				<accessCode>WEBDATA_EDIT_DELETEMATERIAL</accessCode>	<!-- WEBデータ編集_素材削除 -->
+				<accessCode>WEBDATA_EDIT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ編集_素材表示 -->
+				<accessCode>WEBDATA_EDIT_RESETSENTENCE4</accessCode>	<!-- WEBデータ編集_文章4クリア -->
+				<accessCode>WEBDATA_EDIT_CHANGESTATUS</accessCode>		<!-- WEBデータ編集_ステータス変更 -->
+				<accessCode>WEBDATA_EDIT_STATUSCOMP</accessCode>		<!-- WEBデータ編集_ステータス変更完了 -->
+				<accessCode>WEBDATA_EDIT_BACK</accessCode>				<!-- WEBデータ編集_戻る -->
+				<accessCode>WEBDATA_EDIT_CONF</accessCode>				<!-- WEBデータ編集_確認 -->
+				<accessCode>WEBDATA_EDIT_CORRECT</accessCode>			<!-- WEBデータ編集_訂正 -->
+				<accessCode>WEBDATA_EDIT_SUBMIT</accessCode>			<!-- WEBデータ編集_登録 -->
+				<accessCode>WEBDATA_EDIT_COMP</accessCode>				<!-- WEBデータ編集_完了 -->
+				<accessCode>WEBDATA_EDIT_BACKLIST</accessCode>			<!-- WEBデータ編集_一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_RESET_BACKLIST</accessCode>	<!-- WEBデータ編集_上下ボタンから一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_BACKTOP</accessCode>			<!-- WEBデータ編集_上下ボタンからTOPへ戻る -->
+				<accessCode>WEBDATA_EDIT_INDEXWEBDETAIL</accessCode>	<!-- WEBデータ編集_確認画面の店舗一覧へ遷移 -->
+				<accessCode>WEBDATA_DELETE_INDEX</accessCode>			<!-- WEBデータ削除_初期表示 -->
+				<accessCode>WEBDATA_DELETE_COMP</accessCode>			<!-- WEBデータ削除_完了 -->
+				<accessCode>WEBDATA_DELETE_BACKLIST</accessCode>		<!-- WEBデータ削除_一覧へ戻る -->
+				<accessCode>APPTEST_INPUT_INDEX</accessCode>			<!-- 応募テスト_初期表示 -->
+				<accessCode>APPTEST_INPUT_BACK</accessCode>				<!-- 応募テスト_戻る -->
+				<accessCode>APPTEST_INPUT_CONF</accessCode>				<!-- 応募テスト_確認 -->
+				<accessCode>APPTEST_INPUT_CORRECT</accessCode>			<!-- 応募テスト_訂正 -->
+				<accessCode>APPTEST_INPUT_SUBMIT</accessCode>			<!-- 応募テスト_登録 -->
+				<accessCode>APPTEST_INPUT_COMP</accessCode>				<!-- 応募テスト_完了 -->
+				<accessCode>APPTEST_INPUT_BACKLIST</accessCode>			<!-- 応募テスト_一覧へ戻る -->
+				<accessCode>LUMPCOPY_INPUT_INDEX</accessCode>			<!-- WEBデータ一括コピー_初期表示 -->
+				<accessCode>LUMPCOPY_INPUT_CONF</accessCode>			<!-- WEBデータ一括コピー_確認 -->
+				<accessCode>LUMPCOPY_INPUT_BACK</accessCode>			<!-- WEBデータ一括コピー_戻る -->
+				<accessCode>LUMPCOPY_INPUT_CORRECT</accessCode>			<!-- WEBデータ一括コピー_訂正 -->
+				<accessCode>LUMPCOPY_INPUT_SUBMIT</accessCode>			<!-- WEBデータ一括コピー_登録 -->
+				<accessCode>LUMPCOPY_INPUT_COMP</accessCode>			<!-- WEBデータ一括コピー_完了 -->
+				<accessCode>LUMPCOPY_INPUT_BACKLIST</accessCode>		<!-- WEBデータ一括コピー_一覧へ戻る -->
+				<accessCode>LUMPDECIDE_EDIT_INDEX</accessCode>			<!-- WEBデータ一括確定_初期表示 -->
+				<accessCode>LUMPDECIDE_EDIT_BACK</accessCode>			<!-- WEBデータ一括確定_戻る -->
+				<accessCode>LUMPDECIDE_EDIT_SUBMIT</accessCode>			<!-- WEBデータ一括確定_登録 -->
+				<accessCode>LUMPDECIDE_EDIT_COMP</accessCode>			<!-- WEBデータ一括確定_完了 -->
+				<accessCode>LUMPDECIDE_EDIT_BACKLIST</accessCode>		<!-- WEBデータ一括確定_一覧へ戻る -->
+
+				<!-- 顧客検索(サブウィンドウ) -->
+				<accessCode>CUSTOMERSEARCH_SELECT_INDEX</accessCode>			<!-- 顧客選択_初期表示 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_SEARCH</accessCode>			<!-- 顧客選択_検索 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEPAGE</accessCode>		<!-- 顧客選択_ページ遷移 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEMAXROW</accessCode>		<!-- 顧客選択_最大表示件数変更 -->
+
+				<!-- 顧客管理 -->
+				<accessCode>CUSTOMER_INPUT_INDEX</accessCode>			<!-- 顧客登録_初期表示 -->
+				<accessCode>CUSTOMER_INPUT_ADDASSIGNED</accessCode>		<!-- 顧客登録_担当追加 -->
+				<accessCode>CUSTOMER_INPUT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_INPUT_CONF</accessCode>			<!-- 顧客登録_確認 -->
+				<accessCode>CUSTOMER_INPUT_CORRECT</accessCode>			<!-- 顧客登録_訂正 -->
+				<accessCode>CUSTOMER_INPUT_SUBMIT</accessCode>			<!-- 顧客登録_登録 -->
+				<accessCode>CUSTOMER_INPUT_COMP</accessCode>			<!-- 顧客登録_完了 -->
+				<accessCode>CUSTOMER_LIST_INDEX</accessCode>			<!-- 顧客一覧_初期表示 -->
+				<accessCode>CUSTOMER_LIST_SEARCH</accessCode>			<!-- 顧客一覧_検索 -->
+				<accessCode>CUSTOMER_LIST_CHANGEPAGE</accessCode>		<!-- 顧客一覧_ページ遷移 -->
+				<accessCode>CUSTOMER_LIST_CHANGEMAXROW</accessCode>		<!-- 顧客一覧_最大表示件数変更 -->
+				<accessCode>CUSTOMER_LIST_SEARCHAGAIN</accessCode>		<!-- 顧客一覧_別画面から一覧を表示 -->
+				<accessCode>CUSTOMER_DETAIL_INDEX</accessCode>			<!-- 顧客詳細_初期表示 -->
+				<accessCode>CUSTOMER_DETAIL_BACK</accessCode>			<!-- 顧客詳細_戻る -->
+				<accessCode>CUSTOMER_EDIT_INDEX</accessCode>			<!-- 顧客編集_初期表示 -->
+				<accessCode>CUSTOMER_EDIT_ADDASSIGNED</accessCode>		<!-- 顧客編集_担当追加 -->
+				<accessCode>CUSTOMER_EDIT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_EDIT_BACK</accessCode>				<!-- 顧客編集_戻る -->
+				<accessCode>CUSTOMER_EDIT_CONF</accessCode>				<!-- 顧客編集_確認 -->
+				<accessCode>CUSTOMER_EDIT_CORRECT</accessCode>			<!-- 顧客編集_訂正 -->
+				<accessCode>CUSTOMER_EDIT_SUBMIT</accessCode>			<!-- 顧客編集_登録 -->
+				<accessCode>CUSTOMER_EDIT_COMP</accessCode>				<!-- 顧客編集_完了 -->
+				<accessCode>CUSTOMER_EDIT_BACKLIST</accessCode>			<!-- 顧客編集_一覧へ戻る -->
+
+				<!-- GCWコード管理 -->
+				<accessCode>GCW_LIST_INDEX</accessCode>					<!-- GCW一覧_初期表示 -->
+				<accessCode>GCW_LIST_SEARCH</accessCode>				<!-- GCW一覧_検索 -->
+				<accessCode>GCW_LIST_CHANGEPAGE</accessCode>			<!-- GCW一覧_ページ遷移 -->
+				<accessCode>GCW_LIST_CHANGEMAXROW</accessCode>			<!-- GCW一覧_最大表示件数変更 -->
+				<accessCode>GCW_LIST_CHANGESORT</accessCode>			<!-- GCWコード一覧_表示順変更 -->
+				<accessCode>GCW_LIST_SEARCHAGAIN</accessCode>			<!-- GCW一覧_別画面から一覧を表示 -->
+
+				<!-- 応募管理 -->
+				<accessCode>APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- プレ応募管理 -->
+				<accessCode>PRE_APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>PRE_APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>PRE_APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>PRE_APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 気になる管理 -->
+				<accessCode>INTEREST_LIST_INDEX</accessCode>		<!-- 応募一覧_初期表示 -->
+				<accessCode>INTEREST_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>INTEREST_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>INTEREST_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>INTEREST_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>INTEREST_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- パスワード編集 -->
+				<accessCode>CHANGEPASSWORD_EDIT_INDEX</accessCode>		<!-- パスワード編集_初期表示 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CONF</accessCode>		<!-- パスワード編集_確認 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CORRECT</accessCode>	<!-- パスワード編集_訂正 -->
+				<accessCode>CHANGEPASSWORD_EDIT_SUBMIT</accessCode>		<!-- パスワード編集_登録 -->
+				<accessCode>CHANGEPASSWORD_EDIT_COMP</accessCode>		<!-- パスワード編集_完了 -->
+
+				<!-- 店舗一覧 -->
+				<accessCode>SHOPLIST_DETAIL_INDEX</accessCode>			<!-- 店舗一覧詳細 初期表示 -->
+				<accessCode>SHOPLIST_DETAIL_DELETE</accessCode>			<!-- 店舗一覧詳細 削除 -->
+				<accessCode>SHOPLIST_DETAIL_DELETECOMP</accessCode>		<!-- 店舗一覧詳細 削除完了 -->
+				<accessCode>SHOPLIST_DETAIL_BACKTOINDEX</accessCode>	<!-- 店舗一覧詳細 インデックスへ戻る -->
+				<accessCode>SHOPLIST_EDIT_INDEX</accessCode>			<!-- 店舗一覧編集 初期表示 -->
+				<accessCode>SHOPLIST_EDIT_CONF</accessCode>				<!-- 店舗一覧編集 確認 -->
+				<accessCode>SHOPLIST_EDIT_FAILGEO</accessCode>			<!-- 店舗一覧編集 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_EDIT_CORRECT</accessCode>			<!-- 店舗一覧編集 訂正 -->
+				<accessCode>SHOPLIST_EDIT_SUBMIT</accessCode>			<!-- 店舗一覧編集 更新 -->
+				<accessCode>SHOPLIST_EDIT_COMP</accessCode>				<!-- 店舗一覧編集 更新完了 -->
+				<accessCode>SHOPLIST_EDIT_BACK</accessCode>				<!-- 店舗一覧編集 戻る -->
+				<accessCode>SHOPLIST_EDIT_UPMATERIAL</accessCode>		<!-- 店舗一覧編集 素材アップ -->
+				<accessCode>SHOPLIST_EDIT_DELMATERIAL</accessCode>		<!-- 店舗一覧編集 素材削除 -->
+				<accessCode>SHOPLIST_EDIT_BACKINDEX</accessCode>		<!-- 店舗一覧編集 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INDEX_INDEX</accessCode>			<!-- 店舗一覧 インデックス -->
+				<accessCode>SHOPLIST_INPUT_INDEX</accessCode>			<!-- 店舗一覧登録 初期表示 -->
+				<accessCode>SHOPLIST_INPUT_CONF</accessCode>			<!-- 店舗一覧登録 確認 -->
+				<accessCode>SHOPLIST_INPUT_SUBMIT</accessCode>			<!-- 店舗一覧登録 登録 -->
+				<accessCode>SHOPLIST_INPUT_COMP</accessCode>			<!-- 店舗一覧登録 完了 -->
+				<accessCode>SHOPLIST_INPUT_CORRECT</accessCode>			<!-- 店舗一覧登録 訂正 -->
+				<accessCode>SHOPLIST_INPUT_FAILGEO</accessCode>			<!-- 店舗一覧登録 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUT_BACKINDEX</accessCode>		<!-- 店舗一覧登録 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INPUT_UPMATERIAL</accessCode>		<!-- 店舗一覧登録 素材アップ -->
+				<accessCode>SHOPLIST_INPUT_DELMATERIAL</accessCode>		<!-- 店舗一覧登録 素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_INDEX</accessCode>		<!-- 店舗一覧CSVインプット 初期表示 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEOLIST</accessCode>	<!-- 店舗一覧CSVインプット リストのジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEODETAIL</accessCode><!-- 店舗一覧CSVインプット 詳細のジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_EDIT</accessCode>			<!-- 店舗一覧CSVインプット 詳細編集 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACK</accessCode>			<!-- 店舗一覧CSVインプット 戻る -->
+				<accessCode>SHOPLIST_INPUTCSV_CONFDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細確認 -->
+				<accessCode>SHOPLIST_INPUTCSV_CORRECT</accessCode>		<!-- 店舗一覧CSVインプット 詳細訂正 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMITDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細更新 -->
+				<accessCode>SHOPLIST_INPUTCSV_UPMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材アップ -->
+				<accessCode>SHOPLIST_INPUTCSV_DELMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMIT</accessCode>		<!-- 店舗一覧CSVインプット 一括登録 -->
+				<accessCode>SHOPLIST_INPUTCSV_DELETE</accessCode>		<!-- 店舗一覧CSVインプット 一括削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_COMP</accessCode>			<!-- 店舗一覧CSVインプット 一括登録完了 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACKINDEX</accessCode>	<!-- 店舗一覧CSVインプット インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_INDEX</accessCode>			<!-- 店舗一覧リスト 初期表示 -->
+				<accessCode>SHOPLIST_LIST_SEARCH</accessCode>			<!-- 店舗一覧リスト 検索 -->
+				<accessCode>SHOPLIST_LIST_CHANGEMAXROW</accessCode>		<!-- 店舗一覧リスト 最大表示数変更 -->
+				<accessCode>SHOPLIST_LIST_CHANGEPAGE</accessCode>		<!-- 店舗一覧リスト ページ変更 -->
+				<accessCode>SHOPLIST_LIST_BACKINDEX</accessCode>		<!-- 店舗一覧リスト インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_IMPORTCSV</accessCode>		<!-- 店舗一覧リスト CSVインポート -->
+				<accessCode>SHOPLIST_LIST_EXPORT</accessCode>			<!-- 店舗一覧リスト CSVエクスポート -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_LIST</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） リスト -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_EDIT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 変更 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_UPDATE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 更新 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_INPUT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 登録 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CONF</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 確認 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_SUBMIT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 反映 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_COMP</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 完了 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CORRECT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_DELETE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 削除 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_BACKINDEX</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+
+				<!-- 共通処理 -->
+				<accessCode>UTIL_IMAGEUTILITY_DISPLAYWEBDATAIMAGE</accessCode><!-- 画像表示_WEBデータ画像表示 -->
+
+			</accessCodes>
+		</authLevel>
+
+		<!-- ###################  営業権限の権限設定  ################### -->
+		<authLevel>
+			<authLevelCode>5</authLevelCode>
+			<authLevelName>営業権限</authLevelName>
+
+			<accessCodes>
+
+				<!-- TOPページ -->
+				<accessCode>TOP_MENU_INDEX</accessCode>			<!-- TOPページ_初期表示 -->
+
+				<!-- WEBデータ管理 -->
+				<accessCode>WEBDATA_INPUT_INDEX</accessCode>			<!-- WEBデータ登録_初期表示 -->
+				<accessCode>WEBDATA_INPUT_ADDASSIGNED</accessCode>		<!-- WEBデータ登録_路線追加 -->
+				<accessCode>WEBDATA_INPUT_DELETEASSIGNED</accessCode>	<!-- WEBデータ登録_路線削除 -->
+				<accessCode>WEBDATA_INPUT_UPMATERIAL</accessCode>		<!-- WEBデータ登録_素材アップロード -->
+				<accessCode>WEBDATA_INPUT_DELETEMATERIAL</accessCode>	<!-- WEBデータ登録_素材削除 -->
+				<accessCode>WEBDATA_INPUT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ登録_素材表示 -->
+				<accessCode>WEBDATA_INPUT_RESETSENTENCE4</accessCode>	<!-- WEBデータ登録_文章4クリア -->
+				<accessCode>WEBDATA_INPUT_CONF</accessCode>				<!-- WEBデータ登録_確認 -->
+				<accessCode>WEBDATA_INPUT_CORRECT</accessCode>			<!-- WEBデータ登録_訂正 -->
+				<accessCode>WEBDATA_INPUT_SUBMIT</accessCode>			<!-- WEBデータ登録_登録 -->
+				<accessCode>WEBDATA_INPUT_COMP</accessCode>				<!-- WEBデータ登録_完了 -->
+				<accessCode>WEBDATA_INPUT_COPY</accessCode>				<!-- WEBデータ登録_コピー -->
+				<accessCode>WEBDATA_INPUT_COPYCOMP</accessCode>			<!-- WEBデータ登録_コピー完了 -->
+				<accessCode>WEBDATA_INPUT_BACKLIST</accessCode>			<!-- WEBデータ登録_一覧へ戻る -->
+				<accessCode>WEBDATA_LIST_INDEX</accessCode>				<!-- WEBデータ一覧_初期表示 -->
+				<accessCode>WEBDATA_LIST_SEARCH</accessCode>			<!-- WEBデータ一覧_検索 -->
+				<accessCode>WEBDATA_LIST_CHANGEPAGE</accessCode>		<!-- WEBデータ一覧_ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGECOUNTPAGE</accessCode>	<!-- WEBデータ一覧_件数ページ遷移 -->
+				<accessCode>WEBDATA_LIST_CHANGEMAXROW</accessCode>		<!-- WEBデータ一覧_最大表示件数変更 -->
+				<accessCode>WEBDATA_LIST_SEARCHAGAIN</accessCode>		<!-- WEBデータ一覧_別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_BACKSEARCH</accessCode>		<!-- WEBデータ一覧_一括処理別画面から一覧を表示 -->
+				<accessCode>WEBDATA_LIST_LUMPCOPY</accessCode>			<!-- WEBデータ一覧_一括コピー -->
+				<accessCode>WEBDATA_LIST_LUMPDECIDE</accessCode>		<!-- WEBデータ一覧_一括確定 -->
+				<accessCode>WEBDATA_DETAIL_INDEX</accessCode>			<!-- WEBデータ詳細_初期表示 -->
+				<accessCode>WEBDATA_DETAIL_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ詳細_素材表示 -->
+				<accessCode>WEBDATA_DETAIL_BACK</accessCode>			<!-- WEBデータ詳細_戻る -->
+				<accessCode>WEBDATA_EDIT_INDEX</accessCode>				<!-- WEBデータ編集_初期表示 -->
+				<accessCode>WEBDATA_EDIT_ADDASSIGNED</accessCode>		<!-- WEBデータ編集_路線追加 -->
+				<accessCode>WEBDATA_EDIT_DELETEASSIGNED</accessCode>	<!-- WEBデータ編集_路線削除 -->
+				<accessCode>WEBDATA_EDIT_UPMATERIAL</accessCode>		<!-- WEBデータ編集_素材アップロード -->
+				<accessCode>WEBDATA_EDIT_DELETEMATERIAL</accessCode>	<!-- WEBデータ編集_素材削除 -->
+				<accessCode>WEBDATA_EDIT_DISPLAYMATERIAL</accessCode>	<!-- WEBデータ編集_素材表示 -->
+				<accessCode>WEBDATA_EDIT_RESETSENTENCE4</accessCode>	<!-- WEBデータ編集_文章4クリア -->
+				<accessCode>WEBDATA_EDIT_CHANGESTATUS</accessCode>		<!-- WEBデータ編集_ステータス変更 -->
+				<accessCode>WEBDATA_EDIT_STATUSCOMP</accessCode>		<!-- WEBデータ編集_ステータス変更完了 -->
+				<accessCode>WEBDATA_EDIT_BACK</accessCode>				<!-- WEBデータ編集_戻る -->
+				<accessCode>WEBDATA_EDIT_CONF</accessCode>				<!-- WEBデータ編集_確認 -->
+				<accessCode>WEBDATA_EDIT_CORRECT</accessCode>			<!-- WEBデータ編集_訂正 -->
+				<accessCode>WEBDATA_EDIT_SUBMIT</accessCode>			<!-- WEBデータ編集_登録 -->
+				<accessCode>WEBDATA_EDIT_COMP</accessCode>				<!-- WEBデータ編集_完了 -->
+				<accessCode>WEBDATA_EDIT_BACKLIST</accessCode>			<!-- WEBデータ編集_一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_RESET_BACKLIST</accessCode>	<!-- WEBデータ編集_上下ボタンから一覧へ戻る -->
+				<accessCode>WEBDATA_EDIT_BACKTOP</accessCode>			<!-- WEBデータ編集_上下ボタンからTOPへ戻る -->
+				<accessCode>WEBDATA_EDIT_INDEXWEBDETAIL</accessCode>	<!-- WEBデータ編集_確認画面の店舗一覧へ遷移 -->
+				<accessCode>WEBDATA_DELETE_INDEX</accessCode>			<!-- WEBデータ削除_初期表示 -->
+				<accessCode>WEBDATA_DELETE_COMP</accessCode>			<!-- WEBデータ削除_完了 -->
+				<accessCode>WEBDATA_DELETE_BACKLIST</accessCode>		<!-- WEBデータ削除_一覧へ戻る -->
+				<accessCode>APPTEST_INPUT_INDEX</accessCode>			<!-- 応募テスト_初期表示 -->
+				<accessCode>APPTEST_INPUT_BACK</accessCode>				<!-- 応募テスト_戻る -->
+				<accessCode>APPTEST_INPUT_CONF</accessCode>				<!-- 応募テスト_確認 -->
+				<accessCode>APPTEST_INPUT_CORRECT</accessCode>			<!-- 応募テスト_訂正 -->
+				<accessCode>APPTEST_INPUT_SUBMIT</accessCode>			<!-- 応募テスト_登録 -->
+				<accessCode>APPTEST_INPUT_COMP</accessCode>				<!-- 応募テスト_完了 -->
+				<accessCode>APPTEST_INPUT_BACKLIST</accessCode>			<!-- 応募テスト_一覧へ戻る -->
+				<accessCode>LUMPCOPY_INPUT_INDEX</accessCode>			<!-- WEBデータ一括コピー_初期表示 -->
+				<accessCode>LUMPCOPY_INPUT_CONF</accessCode>			<!-- WEBデータ一括コピー_確認 -->
+				<accessCode>LUMPCOPY_INPUT_BACK</accessCode>			<!-- WEBデータ一括コピー_戻る -->
+				<accessCode>LUMPCOPY_INPUT_CORRECT</accessCode>			<!-- WEBデータ一括コピー_訂正 -->
+				<accessCode>LUMPCOPY_INPUT_SUBMIT</accessCode>			<!-- WEBデータ一括コピー_登録 -->
+				<accessCode>LUMPCOPY_INPUT_COMP</accessCode>			<!-- WEBデータ一括コピー_完了 -->
+				<accessCode>LUMPCOPY_INPUT_BACKLIST</accessCode>		<!-- WEBデータ一括コピー_一覧へ戻る -->
+				<accessCode>LUMPDECIDE_EDIT_INDEX</accessCode>			<!-- WEBデータ一括確定_初期表示 -->
+				<accessCode>LUMPDECIDE_EDIT_BACK</accessCode>			<!-- WEBデータ一括確定_戻る -->
+				<accessCode>LUMPDECIDE_EDIT_SUBMIT</accessCode>			<!-- WEBデータ一括確定_登録 -->
+				<accessCode>LUMPDECIDE_EDIT_COMP</accessCode>			<!-- WEBデータ一括確定_完了 -->
+				<accessCode>LUMPDECIDE_EDIT_BACKLIST</accessCode>		<!-- WEBデータ一括確定_一覧へ戻る -->
+
+				<!-- 顧客検索(サブウィンドウ) -->
+				<accessCode>CUSTOMERSEARCH_SELECT_INDEX</accessCode>			<!-- 顧客選択_初期表示 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_SEARCH</accessCode>			<!-- 顧客選択_検索 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEPAGE</accessCode>		<!-- 顧客選択_ページ遷移 -->
+				<accessCode>CUSTOMERSEARCH_SELECT_CHANGEMAXROW</accessCode>		<!-- 顧客選択_最大表示件数変更 -->
+
+				<!-- 顧客管理 -->
+				<accessCode>CUSTOMER_INPUT_INDEX</accessCode>			<!-- 顧客登録_初期表示 -->
+				<accessCode>CUSTOMER_INPUT_ADDASSIGNED</accessCode>		<!-- 顧客登録_担当追加 -->
+				<accessCode>CUSTOMER_INPUT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_INPUT_CONF</accessCode>			<!-- 顧客登録_確認 -->
+				<accessCode>CUSTOMER_INPUT_CORRECT</accessCode>			<!-- 顧客登録_訂正 -->
+				<accessCode>CUSTOMER_INPUT_SUBMIT</accessCode>			<!-- 顧客登録_登録 -->
+				<accessCode>CUSTOMER_INPUT_COMP</accessCode>			<!-- 顧客登録_完了 -->
+				<accessCode>CUSTOMER_LIST_INDEX</accessCode>			<!-- 顧客一覧_初期表示 -->
+				<accessCode>CUSTOMER_LIST_SEARCH</accessCode>			<!-- 顧客一覧_検索 -->
+				<accessCode>CUSTOMER_LIST_CHANGEPAGE</accessCode>		<!-- 顧客一覧_ページ遷移 -->
+				<accessCode>CUSTOMER_LIST_CHANGEMAXROW</accessCode>		<!-- 顧客一覧_最大表示件数変更 -->
+				<accessCode>CUSTOMER_LIST_SEARCHAGAIN</accessCode>		<!-- 顧客一覧_別画面から一覧を表示 -->
+				<accessCode>CUSTOMER_DETAIL_INDEX</accessCode>			<!-- 顧客詳細_初期表示 -->
+				<accessCode>CUSTOMER_DETAIL_BACK</accessCode>			<!-- 顧客詳細_戻る -->
+				<accessCode>CUSTOMER_EDIT_INDEX</accessCode>			<!-- 顧客編集_初期表示 -->
+				<accessCode>CUSTOMER_EDIT_ADDASSIGNED</accessCode>		<!-- 顧客編集_担当追加 -->
+				<accessCode>CUSTOMER_EDIT_DELETEASSIGNED</accessCode>	<!-- 顧客登録_担当削除 -->
+				<accessCode>CUSTOMER_EDIT_BACK</accessCode>				<!-- 顧客編集_戻る -->
+				<accessCode>CUSTOMER_EDIT_CONF</accessCode>				<!-- 顧客編集_確認 -->
+				<accessCode>CUSTOMER_EDIT_CORRECT</accessCode>			<!-- 顧客編集_訂正 -->
+				<accessCode>CUSTOMER_EDIT_SUBMIT</accessCode>			<!-- 顧客編集_登録 -->
+				<accessCode>CUSTOMER_EDIT_COMP</accessCode>				<!-- 顧客編集_完了 -->
+				<accessCode>CUSTOMER_EDIT_BACKLIST</accessCode>			<!-- 顧客編集_一覧へ戻る -->
+
+				<!-- GCWコード管理 -->
+				<accessCode>GCW_LIST_INDEX</accessCode>					<!-- GCW一覧_初期表示 -->
+				<accessCode>GCW_LIST_SEARCH</accessCode>				<!-- GCW一覧_検索 -->
+				<accessCode>GCW_LIST_CHANGEPAGE</accessCode>			<!-- GCW一覧_ページ遷移 -->
+				<accessCode>GCW_LIST_CHANGEMAXROW</accessCode>			<!-- GCW一覧_最大表示件数変更 -->
+				<accessCode>GCW_LIST_CHANGESORT</accessCode>			<!-- GCWコード一覧_表示順変更 -->
+				<accessCode>GCW_LIST_SEARCHAGAIN</accessCode>			<!-- GCW一覧_別画面から一覧を表示 -->
+
+				<!-- 応募管理 -->
+				<accessCode>APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- プレ応募管理 -->
+				<accessCode>PRE_APPLICATION_LIST_INDEX</accessCode>			<!-- 応募一覧_初期表示 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>PRE_APPLICATION_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>PRE_APPLICATION_LIST_SEARCHAGAIN</accessCode>	<!-- 応募一覧_別画面から一覧を表示 -->
+				<accessCode>PRE_APPLICATION_LIST_OUTPUT</accessCode>		<!-- 応募一覧_CSV出力 -->
+				<accessCode>PRE_APPLICATION_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>PRE_APPLICATION_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 気になる管理 -->
+				<accessCode>INTEREST_LIST_INDEX</accessCode>		<!-- 応募一覧_初期表示 -->
+				<accessCode>INTEREST_LIST_SEARCH</accessCode>		<!-- 応募一覧_検索 -->
+				<accessCode>INTEREST_LIST_CHANGEPAGE</accessCode>	<!-- 応募一覧_ページ遷移 -->
+				<accessCode>INTEREST_LIST_CHANGEMAXROW</accessCode>	<!-- 応募一覧_最大表示件数変更 -->
+				<accessCode>INTEREST_DETAIL_INDEX</accessCode>		<!-- 応募詳細_初期表示 -->
+				<accessCode>INTEREST_DETAIL_BACK</accessCode>		<!-- 応募詳細_戻る -->
+
+				<!-- 会員管理 -->
+				<accessCode>MEMBER_LIST_INDEX</accessCode>				<!-- 会員一覧_初期表示 -->
+				<accessCode>MEMBER_LIST_SEARCH</accessCode>				<!-- 会員一覧_検索 -->
+				<accessCode>MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- 会員一覧_ページ遷移 -->
+				<accessCode>MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- 会員一覧_最大表示件数変更 -->
+				<accessCode>MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- 会員一覧_別画面から一覧を表示 -->
+				<accessCode>MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- 会員一覧_メルマガ送信 -->
+				<accessCode>MEMBER_LIST_OUTPUT</accessCode>				<!-- 会員一覧_CSV出力 -->
+				<accessCode>MEMBER_DETAIL_INDEX</accessCode>			<!-- 会員詳細_初期表示 -->
+				<accessCode>MEMBER_DETAIL_BACK</accessCode>				<!-- 会員詳細_戻る -->
+				<accessCode>MEMBER_EDIT_INDEX</accessCode>				<!-- 会員編集_初期表示 -->
+				<accessCode>MEMBER_EDIT_BACK</accessCode>				<!-- 会員編集_戻る -->
+				<accessCode>MEMBER_EDIT_CONF</accessCode>				<!-- 会員編集_確認 -->
+				<accessCode>MEMBER_EDIT_CORRECT</accessCode>			<!-- 会員編集_訂正 -->
+				<accessCode>MEMBER_EDIT_SUBMIT</accessCode>				<!-- 会員編集_登録 -->
+				<accessCode>MEMBER_EDIT_COMP</accessCode>				<!-- 会員編集_完了 -->
+				<accessCode>MEMBER_DELETE_INDEX</accessCode>			<!-- 会員削除_初期表示 -->
+				<accessCode>MEMBER_DELETE_BACK</accessCode>				<!-- 会員削除_戻る -->
+				<accessCode>MEMBER_DELETE_SUBMIT</accessCode>			<!-- 会員削除_登録 -->
+				<accessCode>MEMBER_DELETE_COMP</accessCode>				<!-- 会員削除_完了 -->
+				<accessCode>MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- 会員向けメルマガ登録_初期表示 -->
+				<accessCode>MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- 会員向けメルマガ登録_確認 -->
+				<accessCode>MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- 会員向けメルマガ登録_戻る -->
+				<accessCode>MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- 会員向けメルマガ登録_訂正 -->
+				<accessCode>MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- 会員向けメルマガ登録_登録 -->
+				<accessCode>MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- 会員向けメルマガ登録_完了 -->
+
+				<!-- ジャスキル会員管理 -->
+				<accessCode>JUSKILL_MEMBER_LIST_INDEX</accessCode>				<!-- ジャスキル会員一覧_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCH</accessCode>				<!-- ジャスキル会員一覧_検索 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEPAGE</accessCode>			<!-- ジャスキル会員一覧_ページ遷移 -->
+				<accessCode>JUSKILL_MEMBER_LIST_CHANGEMAXROW</accessCode>		<!-- ジャスキル会員一覧_最大表示件数変更 -->
+				<accessCode>JUSKILL_MEMBER_LIST_SEARCHAGAIN</accessCode>		<!-- ジャスキル会員一覧_別画面から一覧を表示 -->
+				<accessCode>JUSKILL_MEMBER_LIST_MAILMAGAZINE</accessCode>		<!-- ジャスキル会員一覧_メルマガ送信 -->
+				<accessCode>JUSKILL_MEMBER_LIST_OUTPUT</accessCode>				<!-- ジャスキル会員一覧_CSV出力 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_INDEX</accessCode>			<!-- ジャスキル会員詳細_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_DETAIL_BACK</accessCode>				<!-- ジャスキル会員詳細_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_INDEX</accessCode>				<!-- ジャスキル会員編集_初期表示 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_BACK</accessCode>				<!-- ジャスキル会員編集_戻る -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CONF</accessCode>				<!-- ジャスキル会員編集_確認 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_CORRECT</accessCode>			<!-- ジャスキル会員編集_訂正 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_SUBMIT</accessCode>				<!-- ジャスキル会員編集_登録 -->
+				<accessCode>JUSKILL_MEMBER_EDIT_COMP</accessCode>				<!-- ジャスキル会員編集_完了 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_INDEX</accessCode>		<!-- ジャスキル会員向けメルマガ登録_初期表示 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CONF</accessCode>		<!-- ジャスキル会員向けメルマガ登録_確認 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_BACK</accessCode>		<!-- ジャスキル会員向けメルマガ登録_戻る -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_CORRECT</accessCode>	<!-- ジャスキル会員向けメルマガ登録_訂正 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_SUBMIT</accessCode>		<!-- ジャスキル会員向けメルマガ登録_登録 -->
+				<accessCode>JUSKILL_MEMBERMAILMAG_INPUT_COMP</accessCode>		<!-- ジャスキル会員向けメルマガ登録_完了 -->
+
+				<accessCode>JUSKILL_MEMBER_DELETE_INDEX</accessCode>				<!-- ジャスキル会員削除_実行 -->
+				<accessCode>JUSKILL_MEMBER_DELETE_COMP</accessCode>				<!-- ジャスキル会員削除_完了 --><!-- 仮会員管理--><accessCode>TEMPMEMBER_LIST</accessCode>
+				<accessCode>TEMPMEMBER_DETAIL</accessCode>
+				<accessCode>TEMPMEMBER_EDIT</accessCode>
+
+
+				<!-- パスワード編集 -->
+				<accessCode>CHANGEPASSWORD_EDIT_INDEX</accessCode>		<!-- パスワード編集_初期表示 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CONF</accessCode>		<!-- パスワード編集_確認 -->
+				<accessCode>CHANGEPASSWORD_EDIT_CORRECT</accessCode>	<!-- パスワード編集_訂正 -->
+				<accessCode>CHANGEPASSWORD_EDIT_SUBMIT</accessCode>		<!-- パスワード編集_登録 -->
+				<accessCode>CHANGEPASSWORD_EDIT_COMP</accessCode>		<!-- パスワード編集_完了 -->
+
+				<!-- 店舗一覧 -->
+				<accessCode>SHOPLIST_DETAIL_INDEX</accessCode>			<!-- 店舗一覧詳細 初期表示 -->
+				<accessCode>SHOPLIST_DETAIL_DELETE</accessCode>			<!-- 店舗一覧詳細 削除 -->
+				<accessCode>SHOPLIST_DETAIL_DELETECOMP</accessCode>		<!-- 店舗一覧詳細 削除完了 -->
+				<accessCode>SHOPLIST_DETAIL_BACKTOINDEX</accessCode>	<!-- 店舗一覧詳細 インデックスへ戻る -->
+				<accessCode>SHOPLIST_EDIT_INDEX</accessCode>			<!-- 店舗一覧編集 初期表示 -->
+				<accessCode>SHOPLIST_EDIT_CONF</accessCode>				<!-- 店舗一覧編集 確認 -->
+				<accessCode>SHOPLIST_EDIT_FAILGEO</accessCode>			<!-- 店舗一覧編集 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_EDIT_CORRECT</accessCode>			<!-- 店舗一覧編集 訂正 -->
+				<accessCode>SHOPLIST_EDIT_SUBMIT</accessCode>			<!-- 店舗一覧編集 更新 -->
+				<accessCode>SHOPLIST_EDIT_COMP</accessCode>				<!-- 店舗一覧編集 更新完了 -->
+				<accessCode>SHOPLIST_EDIT_BACK</accessCode>				<!-- 店舗一覧編集 戻る -->
+				<accessCode>SHOPLIST_EDIT_UPMATERIAL</accessCode>		<!-- 店舗一覧編集 素材アップ -->
+				<accessCode>SHOPLIST_EDIT_DELMATERIAL</accessCode>		<!-- 店舗一覧編集 素材削除 -->
+				<accessCode>SHOPLIST_EDIT_BACKINDEX</accessCode>		<!-- 店舗一覧編集 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INDEX_INDEX</accessCode>			<!-- 店舗一覧 インデックス -->
+				<accessCode>SHOPLIST_INPUT_INDEX</accessCode>			<!-- 店舗一覧登録 初期表示 -->
+				<accessCode>SHOPLIST_INPUT_CONF</accessCode>			<!-- 店舗一覧登録 確認 -->
+				<accessCode>SHOPLIST_INPUT_SUBMIT</accessCode>			<!-- 店舗一覧登録 登録 -->
+				<accessCode>SHOPLIST_INPUT_COMP</accessCode>			<!-- 店舗一覧登録 完了 -->
+				<accessCode>SHOPLIST_INPUT_CORRECT</accessCode>			<!-- 店舗一覧登録 訂正 -->
+				<accessCode>SHOPLIST_INPUT_FAILGEO</accessCode>			<!-- 店舗一覧登録 ジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUT_BACKINDEX</accessCode>		<!-- 店舗一覧登録 インデックスへ戻る -->
+				<accessCode>SHOPLIST_INPUT_UPMATERIAL</accessCode>		<!-- 店舗一覧登録 素材アップ -->
+				<accessCode>SHOPLIST_INPUT_DELMATERIAL</accessCode>		<!-- 店舗一覧登録 素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_INDEX</accessCode>		<!-- 店舗一覧CSVインプット 初期表示 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEOLIST</accessCode>	<!-- 店舗一覧CSVインプット リストのジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_FAILGEODETAIL</accessCode><!-- 店舗一覧CSVインプット 詳細のジオコーディング失敗 -->
+				<accessCode>SHOPLIST_INPUTCSV_EDIT</accessCode>			<!-- 店舗一覧CSVインプット 詳細編集 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACK</accessCode>			<!-- 店舗一覧CSVインプット 戻る -->
+				<accessCode>SHOPLIST_INPUTCSV_CONFDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細確認 -->
+				<accessCode>SHOPLIST_INPUTCSV_CORRECT</accessCode>		<!-- 店舗一覧CSVインプット 詳細訂正 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMITDETAIL</accessCode>	<!-- 店舗一覧CSVインプット 詳細更新 -->
+				<accessCode>SHOPLIST_INPUTCSV_UPMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材アップ -->
+				<accessCode>SHOPLIST_INPUTCSV_DELMATERIAL</accessCode>	<!-- 店舗一覧CSVインプット 詳細素材削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_SUBMIT</accessCode>		<!-- 店舗一覧CSVインプット 一括登録 -->
+				<accessCode>SHOPLIST_INPUTCSV_DELETE</accessCode>		<!-- 店舗一覧CSVインプット 一括削除 -->
+				<accessCode>SHOPLIST_INPUTCSV_COMP</accessCode>			<!-- 店舗一覧CSVインプット 一括登録完了 -->
+				<accessCode>SHOPLIST_INPUTCSV_BACKINDEX</accessCode>	<!-- 店舗一覧CSVインプット インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_INDEX</accessCode>			<!-- 店舗一覧リスト 初期表示 -->
+				<accessCode>SHOPLIST_LIST_SEARCH</accessCode>			<!-- 店舗一覧リスト 検索 -->
+				<accessCode>SHOPLIST_LIST_CHANGEMAXROW</accessCode>		<!-- 店舗一覧リスト 最大表示数変更 -->
+				<accessCode>SHOPLIST_LIST_CHANGEPAGE</accessCode>		<!-- 店舗一覧リスト ページ変更 -->
+				<accessCode>SHOPLIST_LIST_BACKINDEX</accessCode>		<!-- 店舗一覧リスト インデックスへ戻る -->
+				<accessCode>SHOPLIST_LIST_IMPORTCSV</accessCode>		<!-- 店舗一覧リスト CSVインポート -->
+				<accessCode>SHOPLIST_LIST_EXPORT</accessCode>			<!-- 店舗一覧リスト CSVエクスポート -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_LIST</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） リスト -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_EDIT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 変更 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_UPDATE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 更新 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_INPUT</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 登録 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CONF</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 確認 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_SUBMIT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 反映 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_COMP</accessCode>			<!-- 系列店舗一覧リスト 系列店舗（ラベル） 完了 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_CORRECT</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_DELETE</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 削除 -->
+				<accessCode>SHOPLIST_LABEL_SHOPGROUP_BACKINDEX</accessCode>		<!-- 系列店舗一覧リスト 系列店舗（ラベル） 戻る -->
+
+				<!-- 共通処理 -->
+				<accessCode>UTIL_IMAGEUTILITY_DISPLAYWEBDATAIMAGE</accessCode><!-- 画像表示_WEBデータ画像表示 -->
+
+			</accessCodes>
+		</authLevel>
+
+	</authLevels>
+
+</role>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container 2.4//EN"
+	"http://www.seasar.org/dtd/components24.dtd">
+<components>
+	<include path="jdbc.dicon"/>
+	<include path="s2jdbc-internal.dicon"/>
+	<include path="s2jdbc-arbeitsys.dicon"/>
+	<component name="jdbcManager" class="org.seasar.extension.jdbc.manager.JdbcManagerImpl">
+
+		<property name="dialect">postgre81Dialect</property>
+
+	</component>
+</components>

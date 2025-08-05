@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gourmetcaree</groupId>
+	<artifactId>shop-logic</artifactId>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}</name>
+	<version>1.0.0</version>
+	<description />
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.gourmetcaree</groupId>
+			<artifactId>gourmetcaree-common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jpa_3.0_spec</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>postgresql</groupId> <artifactId>postgresql</artifactId>
+			<version>8.3-603.jdbc4</version> </dependency> -->
+
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>1.6</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.2.9</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seasar.sastruts</groupId>
+			<artifactId>sa-struts</artifactId>
+			<version>1.0.4-sp9</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>6.0.18</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>6.0.18</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jp.co.whizz_tech.common</groupId>
+			<artifactId>wzt-web-util</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jp.co.whizz_tech.common</groupId>
+			<artifactId>wzt-commons</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jp.co.whizz_tech</groupId>
+			<artifactId>wzt-s2-util</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+	</dependencies>
+
+
+
+	<profiles>
+		<profile>
+			<!-- ステージング環境(社内サーバ) -->
+			<id>staging</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/staging/resources</directory>
+					</resource>
+					<resource>
+						<directory>src/main/resources</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+
+		<profile>
+			<!-- 統合環境(公開サーバ) -->
+			<id>integration</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/integration/resources</directory>
+					</resource>
+					<resource>
+						<directory>src/main/resources</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+
+		<profile>
+			<!-- 本番環境 -->
+			<id>production</id>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/production/resources</directory>
+					</resource>
+					<resource>
+						<directory>src/main/resources</directory>
+					</resource>
+				</resources>
+			</build>
+
+		</profile>
+
+	</profiles>
+
+
+	<repositories>
+		<repository>
+			<id>maven.seasar.org</id>
+			<name>The Seasar Foundation Maven2 Repository</name>
+			<url>http://maven.seasar.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>jp.co.whizz_tech.common</id>
+			<name>WHIZZ TECHNOLOGY Maven2 Common Repository</name>
+			<url>http://whizz-maven.repository:8888/maven/whizz_common/</url>
+		</repository>
+
+	</repositories>
+</project>

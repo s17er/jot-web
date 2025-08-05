@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clients type="array">
+	<client>
+		<updated_at type="datetime">2010-04-16T18:45:23+09:00</updated_at>
+		<service_id type="integer">1</service_id>
+		<publish>
+			<number>05058155004</number>
+			<updated_at type="datetime">2010-06-29T22:36:45+09:00</updated_at>
+			<inuse>active</inuse>
+			<created_at type="datetime">2010-06-29T22:36:45+09:00</created_at>
+		</publish>
+		<company_id type="integer">1</company_id>
+		<client_cd>T00000010</client_cd>
+		<client_numbers type="array">
+			<client_number>
+				<number>09010000008</number>
+				<updated_at type="datetime">2010-04-16T18:45:23+09:00</updated_at>
+				<transfer_timezone nil="true"></transfer_timezone>
+				<created_at type="datetime">2010-06-29T22:36:45+09:00</created_at>
+				<id type="integer">10055</id>
+			</client_number>
+		</client_numbers>
+		<name>hirobo1</name>
+		<created_at type="datetime">2010-04-16T16:53:34+09:00</created_at>
+	</client>
+	<client>
+		<updated_at type="datetime">2010-04-17T01:50:40+09:00</updated_at>
+		<service_id type="integer">1</service_id>
+		<publish>
+			<number>05058155013</number>
+			<updated_at type="datetime">2010-05-25T09:26:49+09:00</updated_at>
+			<inuse>active</inuse>
+			<created_at type="datetime">2010-05-25T09:26:49+09:00</created_at>
+		</publish>
+		<company_id type="integer">1</company_id>
+		<client_cd>T00000040</client_cd>
+		<client_numbers type="array">
+			<client_number>
+				<number>09000000010</number>
+				<updated_at type="datetime">2010-04-17T01:50:40+09:00</updated_at>
+				<transfer_timezone nil="true"></transfer_timezone>
+				<created_at type="datetime">2010-04-17T01:50:40+09:00</created_at>
+				<id type="integer">24</id>
+			</client_number>
+		</client_numbers>
+		<name>hirobo2</name>
+		<created_at type="datetime">2010-04-17T01:50:40+09:00</created_at>
+	</client>
+</clients>

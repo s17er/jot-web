@@ -1,0 +1,26 @@
+*.class
+bin/
+classes/
+
+# package files
+*.jar
+*.war
+*.ear
+
+# Tomcat
+.*webclasspath
+
+# maven build directory
+target/
+work/
+
+# Eclipse meta files
+.classpath
+.project
+.settings/
+
+# Eclipse plugins
+.checkstyle
+
+# Editor swap files
+*.swp
